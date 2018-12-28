@@ -11,22 +11,22 @@
 	    background-color: #8D15E8;
 	}
 
-	table tr td:first-child {
+	table.top tr td:first-child {
 		text-align: left;
 		width:30%;
 	}
 
-	table tr td:nth-child(2) {
+	table.top tr td:nth-child(2) {
 		text-align: center;
 		width:40%;
 	}
 
-	table tr td:last-child {
+	table.top tr td:last-child {
 		text-align: right;
 		width:30%;
 	}
 
-	table tr td {
+	table.top tr td {
 		/*border: 1px solid red;*/
 	}
 
@@ -43,7 +43,7 @@
 	}
 
 	table.header tr:first-child td {
-		padding: 1em 0.5em;
+		/*padding: 1em 0.5em;*/
 		/*border-bottom: 1px solid white;*/
 	}
 
@@ -59,6 +59,35 @@
 		margin: 0;
 	}
 
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-color: #333;
+	}
+
+	li {
+	  float: left;
+	}
+
+	li a {
+	  display: block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+
+	li a:hover {
+	  background-color: #111;
+
+	 }
+
+	table#test td {
+		/*border: 1px solid red;*/
+	}
+
 </style>
 
 </head>
@@ -67,27 +96,50 @@
 	<!-- HEADER -->
 	<header>
 
-	    <table class="header">
+	    <table class="header top">
 	        <tr>
-	            <td id="left-header">LOGO#1</th>
-	            <td id="middle-header">AMERTA</th>
-	            <td id="right-header">LOGO#2</i></a></th>
+	            <td><img src="assets/logo_archaea.jpg" width="144" height="144"></th>
+	            <td style="font-size: 9em; font-weight: normal">AMERTA</th>
+	            <td>LOGO#2</i></a></th>
 	        </tr>
 	    </table>
 
 	</header>
 
-	<table class="topnav">
+	<ul>
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="#news">News</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="#about">About</a></li>
+	</ul>
+
+	<table class="topnav top">
 		<tr >
-			<td id="left-header">Back to Home</td>
-			<td id="middle-header">Generation<i class="fa fa-caret-down"></i></td>
-			<td id="right-header">LOGO#2</i></a></td>
+			<td>Back to Home</td>
+			<td>Generation<i class="fa fa-caret-down"></i></td>
+			<td>LOGO#2</i></a></td>
 	    </tr>
 	</table>
 
 
 	<div class="content">
+		<p><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"><br><br><br><br><br><br><span style="font-size: 2em; font-weight: bold; padding-left: 1em">Ketua angkatan</span><br><br>
+			Nama: M Ali Rido<br>
+			NIM: 128731238
+		</p>
 
+		<br><br><br><br><br>
+
+		<table id="test" style="width: 100%">
+			<tr>
+				<td style="width: 20%"><img src="assets/username_icon.png" width="216" height="216"></td>
+				<td style="width: 20%"><img src="assets/username_icon.png" width="216" height="216"></td>
+				<td style="width: 20%"><img src="assets/username_icon.png" width="216" height="216"></td>
+				<td style="width: 20%"><img src="assets/username_icon.png" width="216" height="216"></td>
+				<td style="width: 20%"><img src="assets/username_icon.png" width="216" height="216"></td>
+			</tr>
+
+		</table>
 	</div>
 </body>
 </html>
