@@ -85,7 +85,7 @@
 	 }
 
 	table#test td {
-		border: 1px solid red;
+		/*border: 1px solid red;*/
 	}
 
 
@@ -132,7 +132,9 @@
 				<td style="width: 75%"><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"><br><br><br><span style="font-size: 1.5em; font-weight: bold; padding-left: 0.5em">Nama: .....</span><br>
 				<span style="font-size: 1.5em; font-weight: bold; padding-left: 0.5em">NIM: .....</span><br>
 				<span style="font-size: 1.5em; font-weight: bold; padding-left: 0.5em">Jabatan: .....</span></td>
-				<td style="width: 25%">Presensi ...% (14/20)<br>
+				<td style="width: 25%"><img src="assets/radar-chart.png"><br>
+					<!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> --><br>
+					Presensi ...% (14/20)<br>
 					- kolonisasi ...% (4/4)<br>
 					- ... <br>
 					- ... <br>
