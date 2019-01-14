@@ -6,34 +6,41 @@
 	<!-- <link rel="stylesheet" type="text/css" href="style.css" > -->
 <style>
 	body {
-		font-family: Arial, Helvetica, sans-serif;;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #F6E442; /* Yellow */
 	    margin: 0;
-	    background-color: #8D15E8;
+	    background-color: #2A1B3A; /* Purple */
+	}
+
+	/*--------------- TOP HEADER ---------------*/
+	table.top {
+		width: 100%;
+		padding: 0;
+		margin: 0;
 	}
 
 	table.top tr td:first-child {
 		text-align: left;
 		width:30%;
+		padding-left: 0.6em;
+		/*border: 1px solid red;*/
 	}
 
 	table.top tr td:nth-child(2) {
 		text-align: center;
 		width:40%;
+		font-size: 9em;
+		/*border: 1px solid green;*/
 	}
 
 	table.top tr td:last-child {
 		text-align: right;
 		width:30%;
-	}
-
-	table.top tr td {
-		/*border: 1px solid red;*/
+		padding-right: 0.6em;
+		/*border: 1px solid yellow;*/
 	}
 
 	/*--------------- HEADER ---------------*/
-	header {
-		background-color: #8D15E8;
-	}
 
 	table.header {
 		width: 100%;
@@ -96,24 +103,24 @@
 	<!-- HEADER -->
 	<header>
 
-	    <table class="header top">
+	    <table class="top">
 	        <tr>
 	            <td><img src="assets/logo_archaea.jpg" width="144" height="144"></th>
-	            <td style="font-size: 9em; font-weight: normal">AMERTA</th>
+	            <td style="">AMERTA</th>
 	            <td>LOGO#2</i></a></th>
 	        </tr>
 	    </table>
 
 	</header>
 
-	<ul>
+	<!-- <ul>
 		<li><a class="active" href="#home">Home</a></li>
 		<li><a href="#news">News</a></li>
 		<li><a href="#contact">Contact</a></li>
 		<li><a href="#about">About</a></li>
-	</ul>
+	</ul> -->
 
-	<table class="topnav top">
+	<table class="topnav">
 		<tr >
 			<td>Back to Home</td>
 			<td>Generation<i class="fa fa-caret-down"></i></td>
