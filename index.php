@@ -45,18 +45,35 @@
 
 	/*--------------- HEADER ---------------*/
 
-	/*--------------- TOPNAV ---------------*/
-	table.topnav {
-		background-color: #C19BDE;
+	/*--------------- TOPMENU ---------------*/
+	table.topmenu {
+		background-color: #FDFBFC; /* WHite */
+		/* #C19BDE; /* ungu muda */
 		width: 100%;
 	}
 
-	table.topnav tr td {
-		/*border: 1px solid yellow;	*/
+	table.topmenu tr td {
+		font-size: 1.5em;
 		padding: 0.6em 0.5em;
 		margin: 0;
+		color: black;
+		/*border: 1px solid red;	*/
 	}
 
+	table.topmenu tr td:first-child {
+		text-align: right;
+	}
+
+	table.topmenu tr td:nth-child(2) {
+		width: 15%;
+		text-align: center;
+	}
+
+	table.topmenu tr td:last-child {
+		width: 15%;
+	}
+
+	/* Naon ie */
 	ul {
 	  list-style-type: none;
 	  margin: 0;
@@ -121,13 +138,16 @@
 
 	<!-- Coba ambi top menu nya dari yg udah dipake di wordpress-nya -->
 
-	<table class="topnav">
-		<tr style="color:black">
-			<td>Back to Home</td>
-			<td>Generation<i class="fa fa-caret-down"></i></td>
-			<td>LOGO#2</td>
+	<table class="topmenu">
+
+		<tr>
+			<td><a href="#">Back to Home</a></td>
+			<td>Generation <i class="fa fa-caret-down"></i></td>
+			<td><a href="#">Log In</a></td>
 	    </tr>
+
 	</table>
+
 
 	<div class="content">
 		<p><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"><br><br><br><br><br><br><span style="font-size: 2em; font-weight: bold; padding-left: 1em">Ketua angkatan</span><br><br>
