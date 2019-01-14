@@ -125,10 +125,9 @@
 		<tr style="color:black">
 			<td>Back to Home</td>
 			<td>Generation<i class="fa fa-caret-down"></i></td>
-			<td>LOGO#2</i></a></td>
+			<td>LOGO#2</td>
 	    </tr>
 	</table>
-
 
 	<div class="content">
 		<p><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"><br><br><br><br><br><br><span style="font-size: 2em; font-weight: bold; padding-left: 1em">Ketua angkatan</span><br><br>
