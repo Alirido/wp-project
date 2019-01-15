@@ -1,3 +1,5 @@
+<?php /* Template Name: reportPage1 */ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,7 +123,10 @@
 
 	    <table class="top">
 	        <tr>
-	            <td><img src="assets/logo_archaea.jpg" width="144" height="144"></td>
+
+	            <td><img width="200" height="200" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
+
+	            	<!-- <img src="assets/logo_archaea.jpg" width="144" height="144"> -->
 	            <td>AMERTA</td>
 	            <td>LOGO#2</td>
 	        </tr>
@@ -141,7 +146,7 @@
 	<table class="topmenu">
 
 		<tr>
-			<td><a href="#">Back to Home</a></td>
+			<td><a href="https://archaea.sith.itb.ac.id/">Back to Home</a></td>
 			<td>Generation <i class="fa fa-caret-down"></i></td>
 			<td><a href="#">Log In</a></td>
 	    </tr>
