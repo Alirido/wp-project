@@ -104,7 +104,7 @@
 	}
 
 
-	table#test i {
+	.content i {
 		/*border: 1px solid red;*/
 		color: white;
 		font-size: 10em;
@@ -115,55 +115,45 @@
 		text-align: center;
 	}
 
-
 	/* Testing */
 
-	/*.dropdown {
-	  float: left;
-	  overflow: hidden;
-	}*/
-
 	.dropbtn {
-	  cursor: pointer;
-	  /*font-size: 1.3em;  */
-	  border: none;
-	  outline: none;
-	  color: #666;
-	  /*padding: 14px 16px;*/
-	  /*background-color: inherit;*/
-	  /*font-family: inherit;*/
-	  margin: 0;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		color: #666;
+		margin: 0;
 	}
 
 	.dropbtn:hover, .dropbtn:focus {
-	  background-color: #ddd;
+		background-color: #ddd;
 	}
 
 	.dropdown-content {
 		margin-top: 0.64em;
-	  display: none;
-	  position: absolute;
-	  background-color: #f9f9f9;
-	  min-width: 160px;
-	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	  z-index: 1;
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
 	}
 
 	.dropdown-content a {
-	  float: none;
-	  color: black;
-	  padding: 12px 16px;
-	  text-decoration: none;
-	  display: block;
-	  text-align: left;
+		float: none;
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
 	}
 
 	.dropdown-content a:hover {
-	  background-color: #ddd;
+		background-color: #ddd;
 	}
 
 	.show {
-	  display: block;
+		display: block;
 	}
 
 </style>
@@ -192,7 +182,6 @@
 		<tr>
 			<td></td>
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
-			<!-- <td>Angkatan<i class="fa fa-caret-down"></i></td> -->
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
 					<a href="https://malirido.wordpress.com">2015</a>
@@ -208,9 +197,10 @@
 
 
 	<div class="content">
-		<p><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"><br><br><br><br><br><br><span style="font-size: 2em; font-weight: bold; padding-left: 1em">Ketua angkatan</span><br><br>
-			Nama: M Ali Rido<br>
-			NIM: 128731238
+		<!-- <p><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"> -->
+			<p><i class="fas fa-user" style="float: left; margin: 0.5em"></i><br><br><br><br><span style="font-size: 2em; font-weight: bold">Ketua angkatan</span><br><br>
+			<pre>Nama: M Ali Rido</pre>
+			<pre>NIM:  128731238</pre>
 		</p>
 
 		<br><br><br><br><br>
