@@ -1,13 +1,10 @@
-<?php /* Template Name: reportPage1 */ ?>
+<?php /* Template Name: profilePage */ ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rapot himpunan</title>
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<title>Profile</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-
 	<!-- <link rel="stylesheet" type="text/css" href="style.css" > -->
 <style>
 	body {
@@ -28,24 +25,22 @@
 		text-align: left;
 		width:30%;
 		padding-left: 0.6em;
-		/*border: 1px solid red;*/
 	}
 
 	table.top tr td:nth-child(2) {
 		text-align: center;
 		width:40%;
 		font-size: 6em;
-		/*border: 1px solid green;*/
 	}
 
 	table.top tr td:last-child {
 		text-align: right;
 		width:30%;
 		padding-right: 0.6em;
-		/*border: 1px solid yellow;*/
 	}
 
 	/*--------------- HEADER ---------------*/
+
 
 	/*--------------- TOPMENU ---------------*/
 	table.topmenu {
@@ -144,16 +139,36 @@
 
 	/*--------------- CONTENT ---------------*/
 
-	.content i {
+	table.data td {
 		/*border: 1px solid red;*/
-		color: white;
-		font-size: 10em;
+		padding-left: 5em;
 	}
 
-	table#test td {
-		/*border: 1px solid yellow;*/
-		text-align: center;
+	div.content {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		/*font-size: 0;*/
 	}
+
+	div.left, div.right {
+		display: inline-block;
+		/*font-size: 3em;*/
+	}
+
+	div.left {
+		width: 60%;
+		/*background-color: black;*/
+		position: relative;
+	}
+
+	div.right {
+		width: 20%;
+		/*background-color: white;*/
+		position: relative;
+	}
+
 
 </style>
 
@@ -165,12 +180,9 @@
 
 	    <table class="top">
 	        <tr>
-
 	            <td><img width="144" height="144" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
-
-	            	<!-- <img src="assets/logo_archaea.jpg" width="144" height="144"> -->
 	            <td>AMERTA</td>
-	            <td>Logo#2</td>
+	            <td>LOGO#2</td>
 	        </tr>
 	    </table>
 
@@ -196,36 +208,55 @@
 
 
 	<div class="content">
-		<!-- <p><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"> -->
-			<p><i class="fas fa-user" style="float: left; margin: 0.5em"></i><br><br><br><br><span style="font-size: 2em; font-weight: bold">Ketua angkatan</span></p>
-			<table>
+
+		<div class="left" style="padding: 2em; margin: 3em">
+			<i class="fas fa-user" style="float: left; color: white; font-size: 15em"></i>
+			<table class="data">
 				<tr>
 					<td>Nama:</td>
 					<td style="padding-left: 2em">M Ali Rido</td>
 				</tr>
 				<tr>
 					<td>NIM:</td>
-					<td style="padding-left: 2em">128731238</td>
+					<td style="padding-left: 2em">12314123</td>
+				</tr>
+				<tr>
+					<td>Jabatan:</td>
+					<td style="padding-left: 2em">Ketua</td>
 				</tr>
 			</table>
-			<!-- Nama: &nbsp;M Ali Rido<br>
-			NIM: &nbsp;128731238
-		</p> -->
+		</div>
+		<div class="right">
+			<img src="assets/radar-chart.png"><br><br>
+			Presensi ...% (14/20)<br>
+				- kolonisasi ...% (4/4)<br>
+				- ... <br>
+				- ... <br>
+				- ... <br>
+		</div>
 
-		<br><br><br><br><br>
-
-		<table id="test" style="width: 100%">
+		<!-- <table id="test" style="width: 100%">
 			
 			<tr>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<!-- <img src="assets/username_icon.png" width="216" height="216"> -->
+				<td style="width: 75%"><img src="assets/ava_icon.png" width="288" height="288" style="margin-left: 2em; float: left"><br><br><br><span style="font-size: 1.5em; font-weight: bold; padding-left: 0.5em">Nama: .....</span><br>
+				<span style="font-size: 1.5em; font-weight: bold; padding-left: 0.5em">NIM: .....</span><br>
+				<span style="font-size: 1.5em; font-weight: bold; padding-left: 0.5em">Jabatan: .....</span></td>
+				<td style="width: 25%"><img src="assets/radar-chart.png"><br> -->
+					<!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+					<!-- <br>
+					Presensi ...% (14/20)<br>
+					- kolonisasi ...% (4/4)<br>
+					- ... <br>
+					- ... <br>
+					- ... <br>
+				</td>
+
+
 			</tr>
 
-		</table>
+		</table> -->
+		<!-- <br><br><br><br><br> -->
+
 	</div>
 
 <script>
