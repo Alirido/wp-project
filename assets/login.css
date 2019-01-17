@@ -1,0 +1,47 @@
+/* -------------------------LOG_REG------------------------- */
+div.log_reg {
+	padding: 0;
+	width: 30%;
+	margin: 10% auto;
+	border-color: #392152; /* Purple */
+	border-width: 1.6em 0.4em;
+	border-style: solid;
+	border-radius: 0.5em;
+	text-align: center;
+}
+
+.log_reg table {
+	/*border: 2px solid red;*/
+	width: 100%;
+}
+
+.log_reg tr input{
+	width: 80%;
+}
+
+.log_reg td {
+	padding: 0.3em;
+	/*border: 1px solid green;*/
+}
+
+.log_reg tr td:first-child {
+	text-align: right;
+	color: #6B6B6B;
+	width: 28%;
+}
+
+.log_reg tr td:nth-child(2) {
+	text-align: left;
+	width: 69%;
+}
+
+.log_reg input[type="submit"] {
+	background-color: white;
+    color: #F6E442;
+    padding: 8px 12px;
+    margin: 8px 8px;
+    border: 2px solid #F6E442; /* Yellow */
+    cursor: pointer;
+    border-radius: 12px;
+    font-size : 24px;
+}
