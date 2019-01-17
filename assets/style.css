@@ -126,40 +126,20 @@ table.topmenu tr td:last-child {
 	display: block;
 }
 
+
 /*--------------- CONTENT ---------------*/
-
-/*table.data td {
-	border: 1px solid red;
-	padding-left: 5em;
-}*/
-
 div.content {
 	position: relative
 	width: 100%;
 	margin: 0;
-	padding: 3em 4em;
+	padding: 3em 3em;
 	height: 100%;
 	/*font-size: 0;*/
 	/*border: 1px solid red;*/
 }
 
-div.left, div.right {
-	display: inline-block;
-	/*font-size: 3em;*/
-}
 
-div.left {
-	width: 60%;
-	/*background-color: black;*/
-	position: relative;
-}
-
-div.right {
-	width: 20%;
-	/*background-color: white;*/
-	position: relative;
-}
-
+/*--------------- REPORT PAGE CONTENT ---------------*/
 .content i {
 	/*border: 1px solid red;*/
 	color: white;
@@ -171,13 +151,56 @@ table#test td {
 	text-align: center;
 }
 
-
-/*--------------- LEADER ---------------*/
-
-.leader div:first-child, .leader div:nth-child(2) {
+/*--- LEADER ---*/
+.leader div {
 	display: inline-block;
 	/*position: relative;*/
 	vertical-align: top;
 	margin: 0 2em;
 }
 
+.leader table {
+	font-size: 1.2em;
+}
+
+
+/*--------------- PROFILE PAGE CONTENT ---------------*/
+div.left, div.right {
+	display: inline-block;
+	/*font-size: 3em;*/
+	vertical-align: top;
+}
+
+.left div {
+	display: inline-block;
+	/*position: relative;*/
+	vertical-align: top;
+	margin: 0 2em;
+}
+
+div.left {
+	width: 68%;
+	/*background-color: black;*/
+	position: relative;
+	/*font-size: 2em;*/
+	/*border: 1px solid red;*/
+}
+
+.left table {
+	font-size: 1.5em;
+}
+
+div.right {
+	width: 30%;
+	/*background-color: white;*/
+	position: relative;
+	text-align: center;
+	/*border: 1px solid blue;*/
+}
+
+div.presensi {
+	text-align: left;
+	margin-left: 1.5em;
+	font-size: 1.2em;
+	/*border: 1px solid red;*/
+}
