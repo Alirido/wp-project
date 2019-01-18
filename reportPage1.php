@@ -6,7 +6,7 @@
 
 	<title>Rapot himpunan</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/style.css" >
+	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css" >
 
 </head>
 <body>
@@ -40,7 +40,7 @@
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
-			<td><a href="#">Masuk</a></td>
+			<td><a href="http://archaea.sith.itb.ac.id/login-rapot/">Masuk</a></td>
 	    </tr>
 
 	</table>
@@ -50,7 +50,7 @@
 		
 		<div class="leader">
 			
-			<div><a href="profilePage.php?angkatan=2015"><i class="fas fa-user"></i></a>
+			<div><a href="http://archaea.sith.itb.ac.id/profile/"><i class="fas fa-user"></i></a>
 			</div>
 
 			<div>
