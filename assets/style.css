@@ -11,6 +11,7 @@ table.top {
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	background-color: #2A1B3A; /* Purple */
 }
 
 table.top tr td:first-child {
@@ -175,7 +176,7 @@ div.left, div.right {
 	display: inline-block;
 	/*position: relative;*/
 	vertical-align: top;
-	margin: 0 2em;
+	margin: 0.2em;
 }
 
 div.left {
@@ -203,4 +204,30 @@ div.presensi {
 	margin-left: 1.5em;
 	font-size: 1.2em;
 	/*border: 1px solid red;*/
+}
+
+
+/*--------------- ADMIN SIDE CONTENT ---------------*/
+
+table.presence-mgr {
+	border-collapse: collapse;
+}
+
+.presence-mgr tr, .presence-mgr th, .presence-mgr td{
+	padding: 1em;
+	margin: 0;
+}
+
+.presence-mgr td, .presence-mgr th {
+	border: 0.1em solid #2A1B3A; /* Purple */
+	color: #2A1B3A; /* Purple */
+}
+
+.presence-mgr th {
+	background-color: #ddd;
+}
+
+.presence-mgr a {
+	text-decoration: none;
+	color: #2A1B3A; /* Purple */
 }
