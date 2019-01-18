@@ -6,7 +6,7 @@
 
 	<title>Profile</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/style.css" >
+	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css" >
 
 </head>
 <body>
@@ -37,7 +37,7 @@
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
-			<td><a href="#">Masuk</a></td>
+			<td><a href="http://archaea.sith.itb.ac.id/login-rapot/">Masuk</a></td>
 	    </tr>
 
 	</table>
@@ -50,19 +50,19 @@
 				<i class="fas fa-user" style="float: left; color: white; font-size: 15em"></i>
 			</div>
 
-			<div>
+			<div style="margin-left:0">
 				<table>
 					<tr>
 						<td>Nama:</td>
-						<td style="padding-left: 2em">M Ali Rido</td>
+						<td style="padding-left: 1em">M Ali Rido</td>
 					</tr>
 					<tr>
 						<td>NIM:</td>
-						<td style="padding-left: 2em">12314123</td>
+						<td style="padding-left: 1em">12314123</td>
 					</tr>
 					<tr>
 						<td>Jabatan:</td>
-						<td style="padding-left: 2em">Ketua</td>
+						<td style="padding-left: 1em">Ketua</td>
 					</tr>
 				</table>
 			</div>
