@@ -1,10 +1,12 @@
 <?php /* Template Name: reportPage1 */ 
 
-// require_once('wp-config.php');
-// require_once('wp-load.php');
-
 require_once($_SERVER['DOCUMENT_ROOT'] . $folder . '/wp-config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
+
+$angkatan = 2015;
+if (isset($_GET['angkatan'])) {
+	$angkatan = $_GET['angkatan'];
+}
 
 ?>
 
@@ -42,9 +44,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="https://malirido.wordpress.com">2015</a>
-					<a href="#">2016</a>
-					<a href="#">2017</a>
+					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2015">2015</a>
+					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2016">2016</a>
+					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2017">2017</a>
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
@@ -83,8 +85,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 
 		<?php 
 
+		// QUERY
 		global $wpdb;
-		$results = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE angkatan=2015" );
+		$results = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE angkatan=$angkatan" );
 
 		?>
 
@@ -151,11 +154,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 			}
 		}
 		?>
-				<!-- <td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td> -->
-				<!-- <img src="assets/username_icon.png" width="216" height="216"> -->
 
 		</table>
 	</div>
