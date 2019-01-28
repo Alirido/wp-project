@@ -1,4 +1,12 @@
-<?php /* Template Name: reportPage1 */ ?>
+<?php /* Template Name: reportPage1 */ 
+
+// require_once('wp-config.php');
+// require_once('wp-load.php');
+
+require_once($_SERVER['DOCUMENT_ROOT'] . $folder . '/wp-config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -73,16 +81,81 @@
 
 		<br><br><br><br><br>
 
-		<table id="test" style="width: 100%">
+		<?php 
+
+		global $wpdb;
+		$results = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE angkatan=2015" );
+
+		?>
+
+		<table class="member" style="width: 100%">
 			
+		<?php 
+		$i = 0;
+		foreach ($results as $print) {
+
+			if ($i==0) {
+				++$i;
+		?>
 			<tr>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<td style="width: 20%"><i class="fas fa-user"></i></td>
-				<!-- <img src="assets/username_icon.png" width="216" height="216"> -->
+
+				<td style="width: 20%">
+					<div>
+						<?php 
+						if ($print->foto != "NO") {
+							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+						} else {
+							echo '<i class="fas fa-user-circle"></i>';
+						}
+						?>
+					</div>
+					<br>
+					<div><?php echo $print->nim."<br>".$print->nama; ?></div>
+				</td>
+			<?php
+			} elseif ($i==4) {
+				$i=0;
+			?>
+				<td style="width: 20%">
+					<div>
+						<?php 
+						if ($print->foto != "NO") {
+							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+						} else {
+							echo '<i class="fas fa-user-circle"></i>';
+						}
+						?>
+					</div>
+					<br>
+					<div><?php echo $print->nim."<br>".$print->nama; ?></div>
+				</td>
 			</tr>
+			<?php
+			} else {
+				++$i;
+			?>
+				<td style="width: 20%">
+					<div>
+						<?php 
+						if ($print->foto != "NO") {
+							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+						} else {
+							echo '<i class="fas fa-user-circle"></i>';
+						}
+						?>
+					</div>
+					<br>
+					<div><?php echo $print->nim."<br>".$print->nama; ?></div>
+				</td>
+		<?php
+			}
+		}
+		?>
+				<!-- <td style="width: 20%"><i class="fas fa-user"></i></td>
+				<td style="width: 20%"><i class="fas fa-user"></i></td>
+				<td style="width: 20%"><i class="fas fa-user"></i></td>
+				<td style="width: 20%"><i class="fas fa-user"></i></td> -->
+				<!-- <img src="assets/username_icon.png" width="216" height="216"> -->
 
 		</table>
 	</div>
