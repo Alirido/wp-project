@@ -6,6 +6,10 @@ if (!isset($_SESSION['uname'])) {
 	header("location: http://archaea.sith.itb.ac.id/login-rapot/?err=2");
 }
 
+$angkatan = 2015;
+if (isset($_GET['angkatan'])) {
+	$angkatan = $_GET['angkatan'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +18,6 @@ if (!isset($_SESSION['uname'])) {
 
 	<title>Presence manager</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css"> -->
 	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css">
 
 </head>
@@ -43,9 +46,9 @@ if (!isset($_SESSION['uname'])) {
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2015">2015</a>
-					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2016">2016</a>
-					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2017">2017</a>
+					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2015">2015</a>
+					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2016">2016</a>
+					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2017">2017</a>
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
@@ -62,36 +65,104 @@ if (!isset($_SESSION['uname'])) {
 			<tr>
 				<th>NIM</th>
 				<th>Nama</th>
-				<th>Hiburan & Internalisasi</th>
-				<th>Forum & Kajian</th>
-				<th>Pengembangan Anggota</th>
-				<th>Kebutuhan Dasar</th>
-				<th>Keprofesian</th>
-				<th>Kemasyarakatan</th>
-				<th>Total</th>
+				<th style="padding: 0">
+				<div class="dropdown" style="width: 100%">
+					<button class="dropdown-btn2 hide2" onclick="myFunction2()" style="width: 100%;">Hiburan & Internalisasi</button>
+					<div class="dropdown-content2" id="myDropdown2">
+						<select name="acara" size="4" multiple>
+							<option value="1">Ultah Archaea</option>
+						</select><br>
+						<button onclick="addEvent()">Tambah</button>
+						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+					</div>
+				</div>
+				</th>
+				<th style="padding: 0">
+				<div class="dropdown">
+					<button class="dropdown-btn2 hide3" onclick="myFunction3()">Forum & Kajian</button>
+					<div class="dropdown-content2" id="myDropdown3">
+						<select name="acara" size="4" multiple>
+							<option value="1">Ultah Archaea</option>
+						</select><br>
+						<button onclick="addEvent()">Tambah</button>
+						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+					</div>
+				</div>
+				</th>
+				<th style="padding: 0">
+				<div class="dropdown">
+					<button class="dropdown-btn2 hide4" onclick="myFunction4()">Pengembangan Anggota</button>
+					<div class="dropdown-content2" id="myDropdown4">
+						<select name="acara" size="4" multiple>
+							<option value="1">Ultah Archaea</option>
+						</select><br>
+						<button onclick="addEvent()">Tambah</button>
+						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+					</div>
+				</div>
+				</th>
+				<th style="padding: 0">
+				<div class="dropdown">
+					<button class="dropdown-btn2 hide5" onclick="myFunction5()">Kebutuhan Dasar</button>
+					<div class="dropdown-content2" id="myDropdown5">
+						<select name="acara" size="4" multiple>
+							<option value="1">Ultah Archaea</option>
+						</select><br>
+						<button onclick="addEvent()">Tambah</button>
+						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+					</div>
+				</div>
+				</th>
+				<th style="padding: 0">
+				<div class="dropdown">
+					<button class="dropdown-btn2 hide6" onclick="myFunction6()">Keprofesian</button>
+					<div class="dropdown-content2" id="myDropdown6">
+						<select name="acara" size="4" multiple>
+							<option value="1">Ultah Archaea</option>
+						</select><br>
+						<button onclick="addEvent()">Tambah</button>
+						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+					</div>
+				</div>
+				</th>
+				<th style="padding: 0">
+				<div class="dropdown">
+					<button class="dropdown-btn2 hide7" onclick="myFunction7()">Kemasyarakatan</button>
+					<div class="dropdown-content2" id="myDropdown7">
+						<select name="acara" size="4" multiple>
+							<option value="1">Ultah Archaea</option>
+						</select><br>
+						<button onclick="addEvent()">Tambah</button>
+						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+					</div>
+				</div>
+				</th>
 			</tr>
+
+
+			<!-- list mahasiswa -->
+	<?php 
+		global $wpdb;
+
+		$results = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE angkatan=$angkatan" );
+
+		foreach ($results as $print) {
+		
+		?>		
+		
 			<tr>
-				<td><a href="#">127386132</a></td>
-				<td><a href="#">M Ali Rido</a></td>
-				<td>5/10</td>
-				<td>5/10</td>
-				<td>5/10</td>
-				<td>5/10</td>
-				<td>5/10</td>
-				<td>5/10</td>
-				<td>50%</td>
+				<td><?php echo $print->nim; ?></td>
+				<td><?php echo $print->nama; ?></td>
+				<td><?php echo $print->hib_in; ?></td>
+				<td><?php echo $print->for_kaj; ?></td>
+				<td><?php echo $print->peng_ang; ?></td>
+				<td><?php echo $print->keb_das; ?></td>
+				<td><?php echo $print->keprof; ?></td>
+				<td><?php echo $print->kemas; ?></td>
 			</tr>
-			<tr>
-				<td><a href="#">127386196</a></td>
-				<td><a href="#">Reyhan T</a></td>
-				<td>4/10</td>
-				<td>4/10</td>
-				<td>4/10</td>
-				<td>4/10</td>
-				<td>4/10</td>
-				<td>4/10</td>
-				<td>40%</td>
-			</tr>
+	<?php
+		}
+	?>
 
 		</table>
 
@@ -104,15 +175,77 @@ if (!isset($_SESSION['uname'])) {
 	  document.getElementById("myDropdown").classList.toggle("show");
 	}
 
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction2() {
+		console.log("tes");
+	  document.getElementById("myDropdown2").classList.toggle("show");
+	}
+
+	function myFunction3() {
+		console.log("testing2");
+	  document.getElementById("myDropdown3").classList.toggle("show");
+	}
+
+	function myFunction4() {
+	  document.getElementById("myDropdown4").classList.toggle("show");
+	}
+
+	function myFunction5() {
+	  document.getElementById("myDropdown5").classList.toggle("show");
+	}
+
+	function myFunction6() {
+	  document.getElementById("myDropdown6").classList.toggle("show");
+	}
+
+	function myFunction7() {
+	  document.getElementById("myDropdown7").classList.toggle("show");
+	}
+
 	// Close the dropdown if the user clicks outside of it
 	window.onclick = function(e) {
 	  if (!e.target.matches('.dropbtn')) {
-	  var myDropdown = document.getElementById("myDropdown");
+	  	var myDropdown = document.getElementById("myDropdown");
 	    if (myDropdown.classList.contains('show')) {
 	      myDropdown.classList.remove('show');
 	    }
-	  }
 	}
+	  // } else if (!e.target.matches('.hide2')) {
+	  // 	var myDropdown = document.getElementById("myDropdown2");
+	  //   if (myDropdown.classList.contains('show')) {
+	  //     myDropdown.classList.remove('show');
+	  //   }
+	  // } else if (!e.target.matches('.hide3')) {
+	  // 	var myDropdown = document.getElementById("myDropdown3");
+	  //   if (myDropdown.classList.contains('show')) {
+	  //     myDropdown.classList.remove('show');
+	  //   }
+	  // } else if (!e.target.matches('.hide4')) {
+	  // 	var myDropdown = document.getElementById("myDropdown4");
+	  //   if (myDropdown.classList.contains('show')) {
+	  //     myDropdown.classList.remove('show');
+	  //   }
+	  // } else if (!e.target.matches('.hide5')) {
+	  // 	var myDropdown = document.getElementById("myDropdown5");
+	  //   if (myDropdown.classList.contains('show')) {
+	  //     myDropdown.classList.remove('show');
+	  //   }
+	  // } else if (!e.target.matches('.hide6')) {
+	  // 	var myDropdown = document.getElementById("myDropdown6");
+	  //   if (myDropdown.classList.contains('show')) {
+	  //     myDropdown.classList.remove('show');
+	  //   } 
+	  // } else if (!e.target.matches('.hide7')) {
+	  // 	var myDropdown = document.getElementById("myDropdown7");
+	  //   if (myDropdown.classList.contains('show')) {
+	  //     myDropdown.classList.remove('show');
+	  //   }
+	  // }
+	}
+
+
+
 </script>
 </body>
 </html>
