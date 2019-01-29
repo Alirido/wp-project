@@ -21,6 +21,7 @@ div.log_reg {
 
 .log_reg td {
 	padding: 0.3em;
+	/*font-size: 1.5em;*/
 	/*border: 1px solid green;*/
 }
 
@@ -36,12 +37,23 @@ div.log_reg {
 }
 
 .log_reg input[type="submit"] {
-	background-color: white;
-    color: #F6E442;
-    padding: 8px 12px;
+	background-color: #008CBA;
+    color: white;
+    /*#F6E442;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
     margin: 8px 8px;
-    border: 2px solid #F6E442; /* Yellow */
+    border: none;
+    /*2px solid #F6E442;  Yellow */
     cursor: pointer;
     border-radius: 12px;
     font-size : 24px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  	transition-duration: 0.4s;
+}
+
+.log_reg input[type="submit"]:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
