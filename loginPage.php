@@ -1,9 +1,21 @@
 <?php /* Template Name: loginPage */ 
 
-global $wpdb;
+session_start();
 
-if (isset($_COOKIE['admin'])) {
-    header("location: ")
+if (isset($_GET['err'])) {
+    $e = $_GET['err'];
+    if ($e == 1) {
+        echo "<script>alert('Wrong Username or Password');</script>";
+        echo "<noscript>Wrong Username or Password</noscript>";
+    } elseif ($e == 2) {
+        echo "<script>alert('You are not allowed to be there.');</script>";
+    } elseif ($e == 0) {
+        session_destroy();
+    }
+}
+
+if (isset($_SESSION['uname'])) {
+    header("location: http://archaea.sith.itb.ac.id/admin-page/");
 }
 ?>
 
@@ -22,7 +34,7 @@ if (isset($_COOKIE['admin'])) {
 
         <h1>LOG IN</h1>
 
-        <form name="regis" method="POST" onsubmit="return validateRegister()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form method="POST">
             
             <table>
                 <tr>
@@ -31,13 +43,13 @@ if (isset($_COOKIE['admin'])) {
                 </tr>
                 <tr>
                     <td><label for="pass">Password</label></td>
-                    <td><input type="Password" name="pass" id="pass"></td>
+                    <td><input type="password" name="pass" id="pass"></td>
                 </tr>
             </table>
 
             <br>
 
-            <input type="submit" name="register" value="LOGIN">
+            <input type="submit" name="login" value="LOGIN">
         
         </form>
 </body>
