@@ -87,7 +87,7 @@ if (isset($_GET['angkatan'])) {
 
 		// QUERY
 		global $wpdb;
-		$results = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE angkatan=$angkatan" );
+		$results = $wpdb->get_results( "SELECT nim, nama, angkatan, foto FROM mahasiswa WHERE angkatan=$angkatan" );
 
 		?>
 

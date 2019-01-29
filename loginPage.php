@@ -8,7 +8,7 @@ if (isset($_GET['err'])) {
         echo "<script>alert('Wrong Username or Password');</script>";
         echo "<noscript>Wrong Username or Password</noscript>";
     } elseif ($e == 2) {
-        echo "<script>alert('You are not allowed to be there.');</script>";
+        echo "<script>alert('You are logout.');</script>";
     } elseif ($e == 0) {
         session_destroy();
     }
