@@ -1,4 +1,11 @@
-<?php /* Template Name: loginPage */ ?>
+<?php /* Template Name: loginPage */ 
+
+global $wpdb;
+
+if (isset($_COOKIE['admin'])) {
+    header("location: ")
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -28,9 +35,9 @@
                 </tr>
             </table>
 
-            <br><br>
+            <br>
 
-            <input type="submit" name="register" value="REGISTER">
+            <input type="submit" name="register" value="LOGIN">
         
         </form>
 </body>
