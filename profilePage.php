@@ -1,4 +1,16 @@
-<?php /* Template Name: profilePage */ ?>
+<?php /* Template Name: profilePage */ 
+
+$nim = 0;
+if (isset($_GET['nim'])) {
+	$nim = $_GET['nim'];
+} else {
+	header("location: http://archaea.sith.itb.ac.id/rapot-himpunan");
+}
+
+// QUERY
+global $wpdb;
+$result = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE nim=$nim" );
+?>
 
 <!DOCTYPE html>
 <html>
@@ -31,9 +43,9 @@
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="https://malirido.wordpress.com">2015</a>
-					<a href="#">2016</a>
-					<a href="#">2017</a>
+					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2015">2015</a>
+					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2016">2016</a>
+					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2017">2017</a>
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
@@ -43,27 +55,38 @@
 	</table>
 
 
-	<div class="content">
+	<div class="content profil">
+
+		<?php foreach ($result as $print) {
+		?>
 
 		<div class="left">
 			<div>
-				<i class="fas fa-user" style="float: left; color: white; font-size: 15em"></i>
+				<?php 
+				if ($print->foto != "NO") {
+					echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'" width="400" height="400">';
+				} else {
+					echo '<i class="fas fa-user-circle" style="float: left; color: white; font-size: 15em"></i>';
+				}
+				?>
+
+				<!-- <i class="fas fa-user" style="float: left; color: white; font-size: 15em"></i> -->
 			</div>
 
 			<div style="margin-left:0">
 				<table>
 					<tr>
 						<td>Nama:</td>
-						<td style="padding-left: 1em">M Ali Rido</td>
+						<td style="padding-left: 1em"><?php echo $print->nama; ?></td>
 					</tr>
 					<tr>
 						<td>NIM:</td>
-						<td style="padding-left: 1em">12314123</td>
+						<td style="padding-left: 1em"><?php echo $print->nim; ?></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>Jabatan:</td>
 						<td style="padding-left: 1em">Ketua</td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 		</div>
@@ -106,6 +129,9 @@
 
 		</table> -->
 		<!-- <br><br><br><br><br> -->
+		<?php
+		}
+		?>
 
 	</div>
 
