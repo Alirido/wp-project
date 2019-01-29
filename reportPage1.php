@@ -69,11 +69,11 @@ if (isset($_GET['angkatan'])) {
 				<table>
 					<tr>
 						<td>Nama:</td>
-						<td style="padding-left: 2em">M Ali Rido</td>
+						<td style="padding-left: 2em">-----------</td>
 					</tr>
 					<tr>
 						<td>NIM:</td>
-						<td style="padding-left: 2em">128731238</td>
+						<td style="padding-left: 2em">-----------</td>
 					</tr>
 				</table>
 
@@ -104,6 +104,7 @@ if (isset($_GET['angkatan'])) {
 
 				<td style="width: 20%">
 					<div>
+						<a href="http://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
 							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
@@ -111,6 +112,7 @@ if (isset($_GET['angkatan'])) {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
 						?>
+						</a>
 					</div>
 					<br>
 					<div><?php echo $print->nim."<br>".$print->nama; ?></div>
@@ -121,6 +123,7 @@ if (isset($_GET['angkatan'])) {
 			?>
 				<td style="width: 20%">
 					<div>
+						<a href="http://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
 							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
@@ -128,6 +131,7 @@ if (isset($_GET['angkatan'])) {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
 						?>
+						</a>
 					</div>
 					<br>
 					<div><?php echo $print->nim."<br>".$print->nama; ?></div>
@@ -139,6 +143,7 @@ if (isset($_GET['angkatan'])) {
 			?>
 				<td style="width: 20%">
 					<div>
+						<a href="http://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
 							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
@@ -146,6 +151,7 @@ if (isset($_GET['angkatan'])) {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
 						?>
+						</a>
 					</div>
 					<br>
 					<div><?php echo $print->nim."<br>".$print->nama; ?></div>
