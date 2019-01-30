@@ -66,14 +66,15 @@ if (isset($_GET['angkatan'])) {
 				<th>NIM</th>
 				<th>Nama</th>
 				<th style="padding: 0">
-				<div class="dropdown" style="width: 100%">
-					<button class="dropdown-btn2 hide2" onclick="myFunction2()" style="width: 100%;">Hiburan & Internalisasi</button>
-					<div class="dropdown-content2" id="myDropdown2">
-						<select name="acara" size="4" multiple>
+				<div class="dropdown">
+					<button class="dropdown-btn2 hide2" onclick="myFunction2()">Hiburan & Internalisasi</button>
+					<div class="dropdown-content2 hide2" id="myDropdown2">
+						<select class="hide2" id="event1" size="4" multiple>
 							<option value="1">Ultah Archaea</option>
 						</select><br>
-						<button onclick="addEvent()">Tambah</button>
-						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
+						<input class="hide2" type="text" id="value1" placeholder="Masukkan acara...">
+						<button class="hide2" onclick="addEvent1()">Tambah</button><br>
+						<button class="hide2" onclick="removeEvent1()">Hapus acara yg dipilih</button>
 					</div>
 				</div>
 				</th>
@@ -81,8 +82,8 @@ if (isset($_GET['angkatan'])) {
 				<div class="dropdown">
 					<button class="dropdown-btn2 hide3" onclick="myFunction3()">Forum & Kajian</button>
 					<div class="dropdown-content2" id="myDropdown3">
-						<select name="acara" size="4" multiple>
-							<option value="1">Ultah Archaea</option>
+						<select id="event2" size="4" multiple>
+							<option value="1">Sosker</option>
 						</select><br>
 						<button onclick="addEvent()">Tambah</button>
 						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
@@ -93,8 +94,8 @@ if (isset($_GET['angkatan'])) {
 				<div class="dropdown">
 					<button class="dropdown-btn2 hide4" onclick="myFunction4()">Pengembangan Anggota</button>
 					<div class="dropdown-content2" id="myDropdown4">
-						<select name="acara" size="4" multiple>
-							<option value="1">Ultah Archaea</option>
+						<select id="event2" size="4" multiple>
+							<option value="1">CYOT #1</option>
 						</select><br>
 						<button onclick="addEvent()">Tambah</button>
 						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
@@ -105,8 +106,8 @@ if (isset($_GET['angkatan'])) {
 				<div class="dropdown">
 					<button class="dropdown-btn2 hide5" onclick="myFunction5()">Kebutuhan Dasar</button>
 					<div class="dropdown-content2" id="myDropdown5">
-						<select name="acara" size="4" multiple>
-							<option value="1">Ultah Archaea</option>
+						<select id="event2" size="4" multiple>
+							<option value="1">BSA 1</option>
 						</select><br>
 						<button onclick="addEvent()">Tambah</button>
 						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
@@ -117,8 +118,8 @@ if (isset($_GET['angkatan'])) {
 				<div class="dropdown">
 					<button class="dropdown-btn2 hide6" onclick="myFunction6()">Keprofesian</button>
 					<div class="dropdown-content2" id="myDropdown6">
-						<select name="acara" size="4" multiple>
-							<option value="1">Ultah Archaea</option>
+						<select id="event2" size="4" multiple>
+							<option value="1">HMFT x Archaea</option>
 						</select><br>
 						<button onclick="addEvent()">Tambah</button>
 						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
@@ -129,10 +130,10 @@ if (isset($_GET['angkatan'])) {
 				<div class="dropdown">
 					<button class="dropdown-btn2 hide7" onclick="myFunction7()">Kemasyarakatan</button>
 					<div class="dropdown-content2" id="myDropdown7">
-						<select name="acara" size="4" multiple>
-							<option value="1">Ultah Archaea</option>
+						<select id="event2" size="4" multiple>
+							<option value="1">Archtion</option>
 						</select><br>
-						<button onclick="addEvent()">Tambah</button>
+						<button onclick="addEvent()">Tambah</button><br>
 						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
 					</div>
 				</div>
@@ -247,7 +248,20 @@ if (isset($_GET['angkatan'])) {
 	  }
 	}
 
+	function addEvent1() {
+	  var x = document.getElementById("event1");
+	  var option = document.createElement("option");
+	  var val = document.getElementById("value1").value;
+	  if (val != "") {
+	  	option.text = val;
+	  	x.add(option);	
+	  }
+	}
 
+	function removeEvent1() {
+		var x = document.getElementById("event1");
+  		x.remove(x.selectedIndex);
+	}
 
 </script>
 </body>
