@@ -24,7 +24,7 @@ if (isset($_GET['div'])) {
 		$div = "Kemasyarakatan";
 	}
 } else {
-	// header("location: http://archaea.sith.itb.ac.id/admin-page");
+	header("location: http://archaea.sith.itb.ac.id/admin-page");
 }
 
 global $wpdb;
