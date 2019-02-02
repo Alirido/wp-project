@@ -249,7 +249,11 @@ table.presence-mgr {
 	color: #2A1B3A; /* Purple */
 }
 
-/*--- EVENT MANAGER ---*/
+.presence-mgr th.hvr:hover {
+	background-color: #666;
+}
+
+/*--- TABLE EVENT  ---*/
 div.dropdown {
 	float: left;
 	overflow: hidden;
@@ -328,4 +332,55 @@ div.dropdown {
 
 #myDropdown7 {
 	display: none;
+}
+
+
+/*--------------- ADMIN SIDE CONTENT ---------------*/
+.event-mgr table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.event-mgr th, .event-mgr td {
+	text-align: left;
+	padding: 1em;
+}
+
+.event-mgr tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.event-mgr i {
+	cursor: pointer;
+}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  padding-right: 3em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
 }
