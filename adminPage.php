@@ -1,5 +1,8 @@
 <?php /* Template Name: adminPage */ 
 
+require_once($_SERVER['DOCUMENT_ROOT'] . $folder . '/wp-config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
+
 session_start();
 
 if (!isset($_SESSION['uname'])) {
@@ -10,13 +13,15 @@ $angkatan = 2015;
 if (isset($_GET['angkatan'])) {
 	$angkatan = $_GET['angkatan'];
 }
+
+global $wpdb;
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 
-	<title>Presence manager</title>
+	<title>Admin control</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css">
 
@@ -30,8 +35,6 @@ if (isset($_GET['angkatan'])) {
 	        <tr>
 
 	            <td><img width="144" height="144" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
-
-	            	<!-- <img src="assets/logo_archaea.jpg" width="144" height="144"> -->
 	            <td>AMERTA</td>
 	            <td><img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
 	        </tr>
@@ -65,79 +68,12 @@ if (isset($_GET['angkatan'])) {
 			<tr>
 				<th>NIM</th>
 				<th>Nama</th>
-				<th style="padding: 0">
-				<div class="dropdown">
-					<button class="dropdown-btn2 hide2" onclick="myFunction2()">Hiburan & Internalisasi</button>
-					<div class="dropdown-content2 hide2" id="myDropdown2">
-						<select class="hide2" id="event1" size="4" multiple>
-							<option value="1">Ultah Archaea</option>
-						</select><br>
-						<input class="hide2" type="text" id="value1" placeholder="Masukkan acara...">
-						<button class="hide2" onclick="addEvent1()">Tambah</button><br>
-						<button class="hide2" onclick="removeEvent1()">Hapus acara yg dipilih</button>
-					</div>
-				</div>
-				</th>
-				<th style="padding: 0">
-				<div class="dropdown">
-					<button class="dropdown-btn2 hide3" onclick="myFunction3()">Forum & Kajian</button>
-					<div class="dropdown-content2" id="myDropdown3">
-						<select id="event2" size="4" multiple>
-							<option value="1">Sosker</option>
-						</select><br>
-						<button onclick="addEvent()">Tambah</button>
-						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
-					</div>
-				</div>
-				</th>
-				<th style="padding: 0">
-				<div class="dropdown">
-					<button class="dropdown-btn2 hide4" onclick="myFunction4()">Pengembangan Anggota</button>
-					<div class="dropdown-content2" id="myDropdown4">
-						<select id="event2" size="4" multiple>
-							<option value="1">CYOT #1</option>
-						</select><br>
-						<button onclick="addEvent()">Tambah</button>
-						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
-					</div>
-				</div>
-				</th>
-				<th style="padding: 0">
-				<div class="dropdown">
-					<button class="dropdown-btn2 hide5" onclick="myFunction5()">Kebutuhan Dasar</button>
-					<div class="dropdown-content2" id="myDropdown5">
-						<select id="event2" size="4" multiple>
-							<option value="1">BSA 1</option>
-						</select><br>
-						<button onclick="addEvent()">Tambah</button>
-						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
-					</div>
-				</div>
-				</th>
-				<th style="padding: 0">
-				<div class="dropdown">
-					<button class="dropdown-btn2 hide6" onclick="myFunction6()">Keprofesian</button>
-					<div class="dropdown-content2" id="myDropdown6">
-						<select id="event2" size="4" multiple>
-							<option value="1">HMFT x Archaea</option>
-						</select><br>
-						<button onclick="addEvent()">Tambah</button>
-						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
-					</div>
-				</div>
-				</th>
-				<th style="padding: 0">
-				<div class="dropdown">
-					<button class="dropdown-btn2 hide7" onclick="myFunction7()">Kemasyarakatan</button>
-					<div class="dropdown-content2" id="myDropdown7">
-						<select id="event2" size="4" multiple>
-							<option value="1">Archtion</option>
-						</select><br>
-						<button onclick="addEvent()">Tambah</button><br>
-						<button onclick="removeEvent()">Hapus acara yg dipilih</button>
-					</div>
-				</div>
-				</th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=0">Hiburan & Internalisasi</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=1">Forum & Kajian</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=2">Pengembangan Anggota</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=3">Kebutuhan Dasar</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=4">Keprofesian</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=5">Kemasyarakatan</a></th>
 			</tr>
 
 
@@ -176,32 +112,6 @@ if (isset($_GET['angkatan'])) {
 	  document.getElementById("myDropdown").classList.toggle("show");
 	}
 
-	/* When the user clicks on the button, 
-	toggle between hiding and showing the dropdown content */
-	function myFunction2() {
-		document.getElementById("myDropdown2").style.display = "block";
-	}
-
-	function myFunction3() {
-	  document.getElementById("myDropdown3").style.display = "block";
-	}
-
-	function myFunction4() {
-	  document.getElementById("myDropdown4").style.display = "block";
-	}
-
-	function myFunction5() {
-	  document.getElementById("myDropdown5").style.display = "block";
-	}
-
-	function myFunction6() {
-	  document.getElementById("myDropdown6").style.display = "block";
-	}
-
-	function myFunction7() {
-	  document.getElementById("myDropdown7").style.display = "block";
-	}
-
 	// Close the dropdown if the user clicks outside of it
 	window.onclick = function(e) {
 	  if (!e.target.matches('.dropbtn')) {
@@ -210,57 +120,6 @@ if (isset($_GET['angkatan'])) {
 	      myDropdown.classList.remove('show');
 	    }
 	  } 
-	  if (!e.target.matches('.hide2')) {
-	  	var myDropdown = document.getElementById("myDropdown2");
-	    if (myDropdown.style.display == "block") {
-	      myDropdown.style.display = "none";
-	    }
-	  }
-	  if (!e.target.matches('.hide3')) {
-	  	var myDropdown = document.getElementById("myDropdown3");
-	   if (myDropdown.style.display == "block") {
-	      myDropdown.style.display = "none";
-	    }
-	  }
-	  if (!e.target.matches('.hide4')) {
-	  	var myDropdown = document.getElementById("myDropdown4");
-	    if (myDropdown.style.display == "block") {
-	      myDropdown.style.display = "none";
-	    }
-	  }
-	  if (!e.target.matches('.hide5')) {
-	  	var myDropdown = document.getElementById("myDropdown5");
-	    if (myDropdown.style.display == "block") {
-	      myDropdown.style.display = "none";
-	    }
-	  }
-	  if (!e.target.matches('.hide6')) {
-	  	var myDropdown = document.getElementById("myDropdown6");
-	    if (myDropdown.style.display == "block") {
-	      myDropdown.style.display = "none";
-	    }
-	  }
-	  if (!e.target.matches('.hide7')) {
-	  	var myDropdown = document.getElementById("myDropdown7");
-	    if (myDropdown.style.display == "block") {
-	      myDropdown.style.display = "none";
-	    }
-	  }
-	}
-
-	function addEvent1() {
-	  var x = document.getElementById("event1");
-	  var option = document.createElement("option");
-	  var val = document.getElementById("value1").value;
-	  if (val != "") {
-	  	option.text = val;
-	  	x.add(option);	
-	  }
-	}
-
-	function removeEvent1() {
-		var x = document.getElementById("event1");
-  		x.remove(x.selectedIndex);
 	}
 
 </script>
