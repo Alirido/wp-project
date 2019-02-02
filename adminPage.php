@@ -15,7 +15,16 @@ if (isset($_GET['angkatan'])) {
 }
 
 global $wpdb;
+
+$d0 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Hiburan dan Internalisasi'");
+$d1 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Forum dan Kajian'");
+$d2 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Pengembangan Anggota'");
+$d3 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kebutuhan Dasar'");
+$d4 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Keprofesian'");
+$d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyarakatan'");
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -68,12 +77,12 @@ global $wpdb;
 			<tr>
 				<th>NIM</th>
 				<th>Nama</th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=0">Hiburan & Internalisasi</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=1">Forum & Kajian</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=2">Pengembangan Anggota</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=3">Kebutuhan Dasar</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=4">Keprofesian</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=5">Kemasyarakatan</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=0">Hiburan & Internalisasi<br>(<?php echo $d0; ?>)</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=1">Forum & Kajian<br>(<?php echo $d1; ?>)</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=2">Pengembangan Anggota<br>(<?php echo $d2; ?>)</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=3">Kebutuhan Dasar<br>(<?php echo $d3; ?>)</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=4">Keprofesian<br>(<?php echo $d4; ?>)</a></th>
+				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=5">Kemasyarakatan<br>(<?php echo $d5; ?>)</a></th>
 			</tr>
 
 
