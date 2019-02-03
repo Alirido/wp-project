@@ -87,7 +87,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 
 		<h1 style="text-align: center"><?php echo $div; ?></h1>
 		<br>
-		<h3>Daftar presensi dari acara <?php echo $a; ?></h3>
+		<h3>Daftar presensi dari acara <em><?php echo $a; ?></em></h3>
 		<table>
 			<tr>
 				<th>#</th>
@@ -186,6 +186,11 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 		if (acara == "" || divisi == "" || nim=="") {
 			return;
 		}
+
+		//debugging
+		// console.log(divisi);
+		// console.log(acara);
+		// console.log(nim);
 
 		var xhttp;
 		if (window.XMLHttpRequest) {
