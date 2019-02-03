@@ -19,90 +19,56 @@ if (isset($_POST['nim']) && isset($_POST['acara']) && isset($_POST['div'])) {
 
 		if ($div=="Hiburan dan Internalisasi") {
 
-			if (($wpdb->update('mahasiswa', 
-				array(
-					'hib_in' => 'hib_in'-1
-				),
-				array(
-					'nim' => $nim),
-				array('%d'), array('%d')
-			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			// if (($wpdb->update('mahasiswa', 
+			// 	array(
+			// 		'hib_in' => 'hib_in'-1
+			// 	),
+			// 	array(
+			// 		'nim' => $nim),
+			// 	array('%d'), array('%d')
+			// ))) 
+			if ($wpdb->query("UPDATE mahasiswa SET hib_in=hib_in-1 WHERE nim=$nim")) {
+				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
 				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
 		} elseif ($div=="Forum dan Kajian") {
 
-			if (($wpdb->update('mahasiswa', 
-				array(
-					'for_kaj' => 'for_kaj'-1
-				),
-				array(
-					'nim' => $nim),
-				array('%d'), array('%d')
-			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			if ($wpdb->query("UPDATE mahasiswa SET for_kaj=for_kaj-1 WHERE nim=$nim")) {
+				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
 				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
 		} elseif ($div=="Pengembangan Anggota") {
 
-			if (($wpdb->update('mahasiswa', 
-				array(
-					'peng_ang' => 'peng_ang'-1
-				),
-				array(
-					'nim' => $nim),
-				array('%d'), array('%d')
-			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			if ($wpdb->query("UPDATE mahasiswa SET peng_ang=peng_ang-1 WHERE nim=$nim")) {
+				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
 				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
 		} elseif ($div=="Kebutuhan Dasar") {
 
-			if (($wpdb->update('mahasiswa', 
-				array(
-					'keb_das' => 'keb_das'-1
-				),
-				array(
-					'nim' => $nim),
-				array('%d'), array('%d')
-			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			if ($wpdb->query("UPDATE mahasiswa SET keb_das=keb_das-1 WHERE nim=$nim")) {
+				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
 				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
 		} elseif ($div=="Keprofesian") {
 
-			if (($wpdb->update('mahasiswa', 
-				array(
-					'keprof' => 'keprof'-1
-				),
-				array(
-					'nim' => $nim),
-				array('%d'), array('%d')
-			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			if ($wpdb->query("UPDATE mahasiswa SET keprof=keprof-1 WHERE nim=$nim")) {
+				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
 				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
 		} elseif ($div=="Kemasyarakatan") {
 
-			if (($wpdb->update('mahasiswa', 
-				array(
-					'kemas' => 'kemas'-1
-				),
-				array(
-					'nim' => $nim),
-				array('%d'), array('%d')
-			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			if ($wpdb->query("UPDATE mahasiswa SET kemas=kemas-1 WHERE nim=$nim")) {
+				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
 				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
