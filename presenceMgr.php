@@ -9,11 +9,14 @@ if (!isset($_SESSION['uname'])) {
 	header("location: http://archaea.sith.itb.ac.id/login-rapot/?err=2");
 }
 
-$div = "Hiburan dan Internalisasi";
-$a = "Ultah archaea";
-if (isset($_GET['div']) && isset($_GET['acara'])) {
+$div = "-";
+$a = "-";
+$d = -1;
+if (isset($_GET['div']) && isset($_GET['event'])) {
 	$d = $_GET['div'];
-	if ($d == 1) {
+	if ($d == 0) {
+		$div = "Hiburan dan Internalisasi";
+	} elseif ($d == 1) {
 		$div = "Forum dan Kajian";
 	} elseif ($d == 2) {
 		$div = "Pengembangan Anggota";
@@ -23,11 +26,13 @@ if (isset($_GET['div']) && isset($_GET['acara'])) {
 		$div = "Keprofesian";
 	} elseif ($d == 5) {
 		$div = "Kemasyarakatan";
+	} else {
+		header("location: http://archaea.sith.itb.ac.id/admin-page");	
 	}
 
-	$a = $_GET['acara'];
+	$a = $_GET['event'];
 } else {
-	// header("location: http://archaea.sith.itb.ac.id/admin-page");
+	header("location: http://archaea.sith.itb.ac.id/admin-page");
 }
 
 $angkatan = 2015;
@@ -37,6 +42,10 @@ if (isset($_GET['angkatan'])) {
 
 global $wpdb;
 
+$check = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE acara='$a'");
+if ($check != 1) {
+	header("location: http://archaea.sith.itb.ac.id/admin-page/event-management/?div=$d");
+}
 $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi INNER JOIN mahasiswa ON presensi.nim=mahasiswa.nim WHERE presensi.divisi='$div' AND presensi.acara='$a' AND mahasiswa.angkatan='$angkatan' ORDER BY mahasiswa.nim");
 ?>
 
@@ -87,7 +96,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 
 		<h1 style="text-align: center"><?php echo $div; ?></h1>
 		<br>
-		<h3>Daftar presensi dari acara <em><?php echo $a; ?></em></h3>
+		<h3>Daftar kehadiran dari acara <em><?php echo $a; ?></em></h3>
 		<table>
 			<tr>
 				<th>#</th>
