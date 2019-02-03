@@ -9,10 +9,13 @@ if (!isset($_SESSION['uname'])) {
 	header("location: http://archaea.sith.itb.ac.id/login-rapot/?err=2");
 }
 
-$div = "Hiburan dan Internalisasi";
+$div = "-";
+$d = -1;
 if (isset($_GET['div'])) {
 	$d = $_GET['div'];
-	if ($d == 1) {
+	if ($d == 0) {
+		$div = "Hiburan dan Internalisasi";
+	} elseif ($d == 1) {
 		$div = "Forum dan Kajian";
 	} elseif ($d == 2) {
 		$div = "Pengembangan Anggota";
@@ -22,6 +25,8 @@ if (isset($_GET['div'])) {
 		$div = "Keprofesian";
 	} elseif ($d == 5) {
 		$div = "Kemasyarakatan";
+	} else {
+		header("location: http://archaea.sith.itb.ac.id/admin-page");	
 	}
 } else {
 	header("location: http://archaea.sith.itb.ac.id/admin-page");
@@ -91,7 +96,7 @@ $results = $wpdb->get_results("SELECT * FROM event_archaea WHERE divisi='$div'")
 			
 			<tr>
 				<td><?php echo $i; ?></td>
-				<td><?php echo $print->acara; ?></td>
+				<td><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?div=<?php echo $d; ?>&event=<?php echo $print->acara; ?>"><?php echo $print->acara; ?></td>
 				<td>
 					<i class="fas fa-trash-alt" onclick="hapus('<?php echo $print->acara; ?>', '<?php echo $div; ?>')" style="color: red; font-size: 1.5em"></i>
 				</td>
@@ -104,12 +109,8 @@ $results = $wpdb->get_results("SELECT * FROM event_archaea WHERE divisi='$div'")
 		<br><br><br>
 
 		<div class="form-inline">
-		<!-- <form class="form-inline" method="POST">
-			<input type="hidden" name="divisi" value="</?php echo $div; ?>">
-			<input type="hidden" name="id" value="</?php echo ++$i; ?>"> -->
 			<input type="text" id="acara" name="acara" placeholder="Masukkan nama acara...">
 			<button name="insertEvent" onclick="tambah('<?php echo $div; ?>', '<?php echo ++$i; ?>')">Tambah</button>
-		<!-- </form> -->
 		</div>
 
 	</div>
@@ -160,15 +161,12 @@ $results = $wpdb->get_results("SELECT * FROM event_archaea WHERE divisi='$div'")
             }
         };
 
-        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_updateEvent.php", true);
+        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_removeeEvent.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhttp.send("acara="+acara+"&div="+divisi);
+        xhttp.send("acara="+acara+"&divisi="+divisi);
 	}
 
 	function tambah(x, y) {
-
-		// console.log(x);
-		// console.log(y);
 
 		var divisi = x;
 		var id = y;
@@ -196,9 +194,9 @@ $results = $wpdb->get_results("SELECT * FROM event_archaea WHERE divisi='$div'")
             }
         };
 
-        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_updateEvent.php", true);
+        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_addEvent.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhttp.send("event="+acara+"&bagian="+divisi+"&id="+id);
+        xhttp.send("acara="+acara+"&divisi="+divisi+"&id="+id);
 	}
 
 </script>
