@@ -10,7 +10,7 @@ if (isset($_POST['acara']) && isset($_POST['divisi'])) {
 	$acara = $wpdb->escape($_POST['acara']);
 	$div = $wpdb->escape($_POST['divisi']);
 
-	$results = $wpdb->get_results("SELECT nim FROM presensi WHERE acara=$acara AND divisi=$div");
+	$results = $wpdb->get_results("SELECT nim FROM presensi WHERE acara='$acara' AND divisi='$div'");
 
 	if ($div=="Hiburan dan Internalisasi") {
 		foreach ($results as $row) {	
