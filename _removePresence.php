@@ -5,74 +5,115 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 
 global $wpdb;
 
-if (isset($_POST['acara']) && isset($_POST['div'])) {
+if (isset($_POST['nim']) && isset($_POST['acara']) && isset($_POST['div'])) {
 
-	$acara = $wpdb->escape($_POST['acara']);
-	$div = $wpdb->escape($_POST['div']);
-
-	if ($wpdb->delete("event_archaea", array('acara' => $acara, 'divisi' => $div), 
-		array(
-			'%s',
-			'%s') ) ) {
-		echo 'Acara "'.$acara.'" berhasil dihapus.';
-	} else {
-		echo 'Acara "'.$acara.'" gagal dihapus.';
-	}
-
-} elseif (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) { // Untuk penambahan mahasiswa
-	$acara = $wpdb->escape($_POST['event']);
-	$div = $wpdb->escape($_POST['divisi']);
 	$nim = $wpdb->escape($_POST['nim']);
+	$acara = $wpdb->escape($_POST['acara']);
 
-	if (($wpdb->insert('presensi', 
-		array(
-			'nim' => $nim,
-			'acara' => $acara,
-			'divisi' => $div
-		),
+	if ($wpdb->delete("presensi", array('nim' => $nim, 'acara' => $acara), 
 		array(
 			'%d',
-			'%s',
-			'%s')))) {
-		// Berhasil menambahkan
+			'%s') ) ) {
+
+		$div = $wpdb->escape($_POST['div']);
 
 		if ($div=="Hiburan dan Internalisasi") {
 
-			if (($wpdb->update('presensi', 
+			if (($wpdb->update('mahasiswa', 
 				array(
-					'hib_in' => 'hib_in'+1
+					'hib_in' => 'hib_in'-1
 				),
 				array(
 					'nim' => $nim),
 				array('%d'), array('%d')
 			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil ditambahkan.';
+			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
-				echo 'Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan.';		
+				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
 		} elseif ($div=="Forum dan Kajian") {
 
-			if (($wpdb->update('presensi', 
+			if (($wpdb->update('mahasiswa', 
 				array(
-					'for_kaj' => 'for_kaj'+1
+					'for_kaj' => 'for_kaj'-1
 				),
 				array(
 					'nim' => $nim),
 				array('%d'), array('%d')
 			))) {
-			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil ditambahkan.';
+			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
 			} else {
-				echo 'Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan.';		
+				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
 			}
 
+		} elseif ($div=="Pengembangan Anggota") {
+
+			if (($wpdb->update('mahasiswa', 
+				array(
+					'peng_ang' => 'peng_ang'-1
+				),
+				array(
+					'nim' => $nim),
+				array('%d'), array('%d')
+			))) {
+			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			} else {
+				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
+			}
+
+		} elseif ($div=="Kebutuhan Dasar") {
+
+			if (($wpdb->update('mahasiswa', 
+				array(
+					'keb_das' => 'keb_das'-1
+				),
+				array(
+					'nim' => $nim),
+				array('%d'), array('%d')
+			))) {
+			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			} else {
+				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
+			}
+
+		} elseif ($div=="Keprofesian") {
+
+			if (($wpdb->update('mahasiswa', 
+				array(
+					'keprof' => 'keprof'-1
+				),
+				array(
+					'nim' => $nim),
+				array('%d'), array('%d')
+			))) {
+			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			} else {
+				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
+			}
+
+		} elseif ($div=="Kemasyarakatan") {
+
+			if (($wpdb->update('mahasiswa', 
+				array(
+					'kemas' => 'kemas'-1
+				),
+				array(
+					'nim' => $nim),
+				array('%d'), array('%d')
+			))) {
+			echo 'Mahasiswa dengan nim "'.$nim.'" berhasil dihapus.';
+			} else {
+				echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihapus.';		
+			}
+
+		} else {
+			echo "Divisi tidak terdefinisi";
 		}
 
 	} else {
-		// Gagal menambahkan
-		echo 'Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan.';
+		echo 'Mahasiswa dengan nim "'.$nim.'" gagal dihilangkan.';
 	}
-
 
 } else {
 	echo "Nothing post method happen!";
