@@ -161,7 +161,7 @@ $results = $wpdb->get_results("SELECT * FROM event_archaea WHERE divisi='$div'")
             }
         };
 
-        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_removeeEvent.php", true);
+        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_removeEvent.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("acara="+acara+"&divisi="+divisi);
 	}
