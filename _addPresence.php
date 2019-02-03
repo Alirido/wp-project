@@ -26,14 +26,6 @@ if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) {
 
 			if ($div=="Hiburan dan Internalisasi") {
 
-				// if (($wpdb->update('mahasiswa', 
-				// 	array(
-				// 		'hib_in' => 'hib_in'+1
-				// 	),
-				// 	array(
-				// 		'nim' => $nim),
-				// 	array('%d'), array('%d')
-				// ))) {
 				if ($wpdb->query("UPDATE mahasiswa SET hib_in=hib_in+1 WHERE nim=$nim")) {
 					echo 'Mahasiswa dengan nim "'.$nim.'" berhasil ditambahkan.';
 				} else {
