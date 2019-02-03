@@ -36,7 +36,7 @@ if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) {
 				))) {
 				echo 'Mahasiswa dengan nim "'.$nim.'" berhasil ditambahkan.';
 				} else {
-					echo 'Masuk sini ngga? - Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan.';		
+					echo 'Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan.';		
 				}
 
 			} elseif ($div=="Forum dan Kajian") {
