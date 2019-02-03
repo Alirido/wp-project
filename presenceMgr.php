@@ -37,7 +37,7 @@ if (isset($_GET['angkatan'])) {
 
 global $wpdb;
 
-$results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi INNER JOIN mahasiswa ON presensi.nim=mahasiswa.nim WHERE presensi.divisi='$div' AND presensi.acara='$a' AND mahasiswa.angkatan='$angkatan' ORDER BY presensi.nim");
+$results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi INNER JOIN mahasiswa ON presensi.nim=mahasiswa.nim WHERE presensi.divisi='$div' AND presensi.acara='$a' AND mahasiswa.angkatan='$angkatan' ORDER BY mahasiswa.nim");
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +102,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 				<td><?php echo $print->nim; ?></td>
 				<td><?php echo $print->nama; ?></td>
 				<td>
-					<i class="fas fa-trash-alt" onclick="hapus()" style="color: red; font-size: 1.5em"></i>
+					<i class="fas fa-trash-alt" onclick="hapus(<?php echo $print->nim; ?>, '<?php echo $a; ?>', '<?php echo $div; ?>')" style="color: red; font-size: 1.5em"></i>
 				</td>
 			</tr>
 
@@ -140,44 +140,44 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 	  }
 	}
 
-	// function hapus(x, y) {
-	// 	var divisi = y;
-	// 	var acara = x;
-	// 	if (acara == "" || divisi == "") {
-	// 		return;
-	// 	}
+	function hapus(x, y, z) {
+		var nim = x;
+		var acara = y;
+		var divisi = z;
+		if (nim == "" || acara == "" || divisi == "") {
+			return;
+		}
 
-	// 	// console.log(divisi);
-	// 	// console.log(acara);
+		//debugging
+		// console.log(divisi);
+		// console.log(acara);
+		// console.log(nim);
 
-	// 	var xhttp;
-	// 	if (window.XMLHttpRequest) {
-	// 		// code for modern browsers
-	// 		xhttp = new XMLHttpRequest();
-	// 	} else {
-	// 		// code for IE6, IE5
- //            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-	// 	}
+		var xhttp;
+		if (window.XMLHttpRequest) {
+			// code for modern browsers
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
 
-	// 	xhttp.onreadystatechange = function() {
-	// 		if (this.readyState == 4 && this.status == 200) {
-	// 			var acc = this.responseText;
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var acc = this.responseText;
 
-	// 			alert(acc);
+				alert(acc);
 
-	// 			location.reload();
- //            }
- //        };
+				location.reload();
+            }
+        };
 
- //        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_updateEvent.php", true);
- //        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
- //        xhttp.send("acara="+acara+"&div="+divisi);
-	// }
+        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_removePresence.php", true);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send("nim="+nim+"&acara="+acara+"&div="+divisi);
+	}
 
 	function tambah(x, y) {
-
-		// console.log(x);
-		// console.log(y);
 
 		var divisi = x;
 		var acara = y;
