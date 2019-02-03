@@ -354,6 +354,15 @@ div.dropdown {
 	cursor: pointer;
 }
 
+.event-mgr a {
+	text-decoration: none;
+	color: black;
+}
+
+.event-mgr a:hover {
+	text-decoration: underline;
+}
+
 .form-inline {  
   display: flex;
   flex-flow: row wrap;
