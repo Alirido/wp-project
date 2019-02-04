@@ -9,7 +9,7 @@ if (isset($_GET['nim'])) {
 
 // QUERY
 global $wpdb;
-$result = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE nim=$nim" );
+$print = $wpdb->get_row( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 ?>
 
 <!DOCTYPE html>
@@ -59,9 +59,6 @@ $result = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 
 	<div class="content profil">
 
-		<?php foreach ($result as $print) {
-		?>
-
 		<div class="left">
 			<div>
 				<?php 
@@ -101,30 +98,45 @@ $result = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 			<br>
 			
 			<div class="presensi">
-				<span>Presensi ...% (14/20)</span><br>
+
+				<?php
+
+				$hib_in = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE divisi='Hiburan dan Internalisasi'");
+				$for_kaj = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE divisi='Forum dan Kajian'");
+				$peng_ang = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE divisi='Pengembangan Anggota'");
+				$keb_das = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE divisi='Kebutuhan Dasar'");
+				$keprof = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE divisi='Keprofesian'");
+				$kemas = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE divisi='Kemasyarakatan'");
+				$total = $print->hib_in + $print->for_kaj + $print->peng_ang + $print->keb_das + $print->keprof + $print->kemas;
+				$total_acara = $hib_in + $for_kaj + $peng_ang + $keb_das + $keprof + $kemas;
+				$arr[0] = $hib_in==0? 0 : round($print->hib_in/$hib_in*100);
+				$arr[1] = $for_kaj==0? 0 : round($print->for_kaj/$for_kaj*100);
+				$arr[2] = $peng_ang==0? 0 : round($print->peng_ang/$peng_ang*100);
+				$arr[3] = $keb_das==0? 0 : round($print->keb_das/$keb_das*100);
+				$arr[4] = $keprof==0? 0 : round($print->keprof/$keprof*100);
+				$arr[5] = $kemas==0? 0 : round($print->kemas/$kemas*100);
+				?>
+				Presensi <?php echo ($total_acara==0? 0 : round($total/$total_acara*100)); ?>% (<?php echo $total."/".$total_acara; ?>)<br>
 				<div style="margin-left: 0.4em">
-					- Hiburan & Internalisasi ...% (4/4)<br>
-					- Forum & kajian ... % ()<br>
-					- Pengembangan Anggota ... % ()<br>
-					- Kebutuhan Dasar ... % ()<br>
-					- Keprofesian ... % ()<br>
-					- Kemasyarakatan ... % () 
+					- Hiburan & Internalisasi <?php echo $arr[0]; ?>% (<?php echo $print->hib_in."/".$hib_in; ?>)<br>
+					- Forum & kajian <?php echo $arr[1]; ?>% (<?php echo $print->for_kaj."/".$for_kaj; ?>)<br>
+					- Pengembangan Anggota <?php echo $arr[2]; ?>% (<?php echo $print->peng_ang."/".$peng_ang; ?>)<br>
+					- Kebutuhan Dasar <?php echo $arr[3]; ?>% (<?php echo $print->keb_das."/".$keb_das; ?>)<br>
+					- Keprofesian <?php echo $arr[4]; ?>% (<?php echo $print->keprof."/".$keprof; ?>)<br>
+					- Kemasyarakatan <?php echo $arr[5]; ?>% (<?php echo $print->kemas."/".$kemas; ?>)
 				</div>
+
 			</div>
 
 		</div>
-
-		<?php
-		}
-		?>
 
 	</div>
 
 <script>
 
-var ctx = document.getElementById('myChart').getContext('2d');
+var dataArray = [<?php echo join(',', $arr); ?>];
 
-Chart.defaults.global.defaultColor = "white";
+var ctx = document.getElementById('myChart').getContext('2d');
 
 var myRadarChart = new Chart(ctx, {
     type: 'radar',
@@ -136,7 +148,8 @@ var myRadarChart = new Chart(ctx, {
 	    	backgroundColor: 'rgba(246, 228, 66, 0.2)',
 	    	borderColor: 'rgba(246, 228, 66, 1)',
 	    	borderWidth: 1,
-	    	data: [5, 2, 4, 6, 5, 6]
+	    	data: dataArray
+	    	//[hib_in, for_kaj, peng_ang, keb_das, keprof, kemas]
 	        // data: [20, 10, 4, 2]
 	    }]
 	},
@@ -151,14 +164,14 @@ var myRadarChart = new Chart(ctx, {
     			fontColor: "white",
     			beginAtZero: true,
     		// 	// min: 2,
-    			sugestedMax: 10,
-    			stepSize: 1
+    			max: 100,
+    			stepSize: 20
     		}
     	},
     	legend: {
     		position: 'bottom',
     		labels: {
-                fontColor: 'rgba(246, 228, 66, 1)'
+                fontColor: 'white'
                 // fillStyle: 'rgba(246, 228, 66, 1)'
             }
     	},
@@ -169,7 +182,7 @@ var myRadarChart = new Chart(ctx, {
     	},
     	layout: {
             padding: {
-                left: 1,
+                left: 2,
                 right: 0,
                 top: 0,
                 bottom: 0
