@@ -52,6 +52,37 @@ table.topmenu tr td {
 	/*border: 1px solid red;	*/
 }
 
+table.topmenu tr td:first-child {
+	text-align: left;
+}
+
+/*--- BREADCRUMB ---*/
+ul.breadcrumb {
+	text-align: left;
+	list-style: none;
+	/*padding: 10px 16px;*/
+	/*background-color: #eee;*/
+}
+ul.breadcrumb li {
+  display: inline;
+  /*font-size: 18px;*/
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+  display: inline;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+
 table.topmenu a {
 	padding: 0.5em 0.2em;
 	text-decoration: none;
@@ -60,8 +91,12 @@ table.topmenu a {
 	margin: 0;
 }
 
-table.topmenu a:hover {
+table.topmenu td:hover {
 	background-color: #ddd;
+}
+
+table.topmenu td:first-child:hover {
+	background-color: #f3f3f3;
 }
 
 table.topmenu tr td:first-child {
