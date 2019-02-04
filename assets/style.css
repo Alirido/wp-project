@@ -222,7 +222,7 @@ div.left, div.right {
 }
 
 div.left {
-	width: 68%;
+	width: 65%;
 	/*background-color: black;*/
 	position: relative;
 	/*font-size: 2em;*/
@@ -234,7 +234,7 @@ div.left {
 }
 
 div.right {
-	width: 30%;
+	width: 34%;
 	/*background-color: white;*/
 	position: relative;
 	text-align: center;
