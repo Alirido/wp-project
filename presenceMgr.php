@@ -77,13 +77,19 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 	<table class="topmenu">
 
 		<tr>
-			<td></td>
+			<td>
+				<ul class="breadcrumb">
+				  <li><a href="http://archaea.sith.itb.ac.id/admin-page/">Admin</a></li>
+				  <li><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=<?php echo $d; ?>">Event Management</a></li>
+				  <li>Presensi</li>
+				</ul>
+			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2015">2015</a>
-					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2016">2016</a>
-					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2017">2017</a>
+					<a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2015&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2015</a>
+					<a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2016&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2016</a>
+					<a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2017&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2017</a>
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
@@ -96,7 +102,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 
 		<h1 style="text-align: center"><?php echo $div; ?></h1>
 		<br>
-		<h3>Daftar kehadiran dari acara <em><?php echo $a; ?></em></h3>
+		<h3>Daftar kehadiran dari acara <em><?php echo $a; ?></em> (angkatan <?php echo $angkatan; ?>)</h3>
 		<table>
 			<tr>
 				<th>#</th>
