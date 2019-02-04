@@ -16,7 +16,7 @@ if (isset($_GET['angkatan'])) {
 
 	<title>Rapot himpunan</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css" >
+	<link rel="stylesheet" type="text/css" href="https://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css" >
 
 </head>
 <body>
@@ -27,11 +27,11 @@ if (isset($_GET['angkatan'])) {
 	    <table class="top">
 	        <tr>
 
-	            <td><img width="144" height="144" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
+	            <td><img width="144" height="144" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
 
 	            	<!-- <img src="assets/logo_archaea.jpg" width="144" height="144"> -->
 	            <td>AMERTA</td>
-	            <td><img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
+	            <td><img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
 	        </tr>
 	    </table>
 
@@ -44,13 +44,13 @@ if (isset($_GET['angkatan'])) {
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2015">2015</a>
-					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2016">2016</a>
-					<a href="http://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2017">2017</a>
+					<a href="https://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2015">2015</a>
+					<a href="https://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2016">2016</a>
+					<a href="https://archaea.sith.itb.ac.id/rapot-himpunan?angkatan=2017">2017</a>
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
-			<td><a href="http://archaea.sith.itb.ac.id/login-rapot/">Masuk</a></td>
+			<td><a href="https://archaea.sith.itb.ac.id/login-rapot/">Masuk</a></td>
 	    </tr>
 
 	</table>
@@ -60,7 +60,7 @@ if (isset($_GET['angkatan'])) {
 		
 		<div class="leader">
 			
-			<div><a href="http://archaea.sith.itb.ac.id/profile/"><i class="fas fa-user"></i></a>
+			<div><a href="https://archaea.sith.itb.ac.id/profile/"><i class="fas fa-user"></i></a>
 			</div>
 
 			<div>
@@ -104,10 +104,10 @@ if (isset($_GET['angkatan'])) {
 
 				<td style="width: 20%">
 					<div>
-						<a href="http://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
+						<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
-							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 						} else {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
@@ -123,10 +123,10 @@ if (isset($_GET['angkatan'])) {
 			?>
 				<td style="width: 20%">
 					<div>
-						<a href="http://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
+						<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
-							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 						} else {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
@@ -143,10 +143,10 @@ if (isset($_GET['angkatan'])) {
 			?>
 				<td style="width: 20%">
 					<div>
-						<a href="http://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
+						<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
-							echo '<img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 						} else {
 							echo '<i class="fas fa-user-circle"></i>';
 						}

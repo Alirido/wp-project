@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 session_start();
 
 if (!isset($_SESSION['uname'])) {
-	header("location: http://archaea.sith.itb.ac.id/login-rapot/?err=2");
+	header("location: https://archaea.sith.itb.ac.id/login-rapot/?err=2");
 }
 
 $angkatan = 2015;
@@ -32,7 +32,7 @@ $d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyara
 
 	<title>Admin control</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="https://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css">
 
 </head>
 <body style="background-color: white">
@@ -43,9 +43,9 @@ $d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyara
 	    <table class="top">
 	        <tr>
 
-	            <td><img width="144" height="144" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
+	            <td><img width="144" height="144" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
 	            <td>AMERTA</td>
-	            <td><img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
+	            <td><img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
 	        </tr>
 	    </table>
 
@@ -58,13 +58,13 @@ $d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyara
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2015">2015</a>
-					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2016">2016</a>
-					<a href="http://archaea.sith.itb.ac.id/admin-page?angkatan=2017">2017</a>
+					<a href="https://archaea.sith.itb.ac.id/admin-page?angkatan=2015">2015</a>
+					<a href="https://archaea.sith.itb.ac.id/admin-page?angkatan=2016">2016</a>
+					<a href="https://archaea.sith.itb.ac.id/admin-page?angkatan=2017">2017</a>
 				</div>
 			</td>
-			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
-			<td><a href="http://archaea.sith.itb.ac.id/login-rapot/?err=0">Keluar</a></td>
+			<td><a href="httpss://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
+			<td><a href="https://archaea.sith.itb.ac.id/login-rapot/?err=0">Keluar</a></td>
 	    </tr>
 
 	</table>
@@ -77,12 +77,12 @@ $d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyara
 			<tr>
 				<th>NIM</th>
 				<th>Nama</th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=0">Hiburan & Internalisasi<br>(<?php echo $d0; ?>)</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=1">Forum & Kajian<br>(<?php echo $d1; ?>)</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=2">Pengembangan Anggota<br>(<?php echo $d2; ?>)</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=3">Kebutuhan Dasar<br>(<?php echo $d3; ?>)</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=4">Keprofesian<br>(<?php echo $d4; ?>)</a></th>
-				<th class="hvr"><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=5">Kemasyarakatan<br>(<?php echo $d5; ?>)</a></th>
+				<th class="hvr"><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=0">Hiburan & Internalisasi<br>(<?php echo $d0; ?>)</a></th>
+				<th class="hvr"><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=1">Forum & Kajian<br>(<?php echo $d1; ?>)</a></th>
+				<th class="hvr"><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=2">Pengembangan Anggota<br>(<?php echo $d2; ?>)</a></th>
+				<th class="hvr"><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=3">Kebutuhan Dasar<br>(<?php echo $d3; ?>)</a></th>
+				<th class="hvr"><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=4">Keprofesian<br>(<?php echo $d4; ?>)</a></th>
+				<th class="hvr"><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=5">Kemasyarakatan<br>(<?php echo $d5; ?>)</a></th>
 			</tr>
 
 

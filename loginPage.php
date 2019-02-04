@@ -15,7 +15,7 @@ if (isset($_GET['err'])) {
 }
 
 if (isset($_SESSION['uname'])) {
-    header("location: http://archaea.sith.itb.ac.id/admin-page/");
+    header("location: https://archaea.sith.itb.ac.id/admin-page/");
 }
 ?>
 
@@ -25,7 +25,7 @@ if (isset($_SESSION['uname'])) {
 
 	<title>Log In</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/login.css" >
+	<link rel="stylesheet" type="text/css" href="https://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/login.css" >
 
 </head>
 <body>

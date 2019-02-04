@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 session_start();
 
 if (!isset($_SESSION['uname'])) {
-	header("location: http://archaea.sith.itb.ac.id/login-rapot/?err=2");
+	header("location: https://archaea.sith.itb.ac.id/login-rapot/?err=2");
 }
 
 $div = "-";
@@ -27,12 +27,12 @@ if (isset($_GET['div']) && isset($_GET['event'])) {
 	} elseif ($d == 5) {
 		$div = "Kemasyarakatan";
 	} else {
-		header("location: http://archaea.sith.itb.ac.id/admin-page");	
+		header("location: https://archaea.sith.itb.ac.id/admin-page");	
 	}
 
 	$a = $_GET['event'];
 } else {
-	header("location: http://archaea.sith.itb.ac.id/admin-page");
+	header("location: https://archaea.sith.itb.ac.id/admin-page");
 }
 
 $angkatan = 2015;
@@ -44,7 +44,7 @@ global $wpdb;
 
 $check = $wpdb->get_var("SELECT COUNT(id) FROM event_archaea WHERE acara='$a'");
 if ($check != 1) {
-	header("location: http://archaea.sith.itb.ac.id/admin-page/event-management/?div=$d");
+	header("location: https://archaea.sith.itb.ac.id/admin-page/event-management/?div=$d");
 }
 $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi INNER JOIN mahasiswa ON presensi.nim=mahasiswa.nim WHERE presensi.divisi='$div' AND presensi.acara='$a' AND mahasiswa.angkatan='$angkatan' ORDER BY mahasiswa.nim");
 ?>
@@ -55,7 +55,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 
 	<title>Presence management</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="https://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/assets/style.css">
 
 </head>
 <body style="background-color: white; color: black">
@@ -66,9 +66,9 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 	    <table class="top">
 	        <tr>
 
-	            <td><img width="144" height="144" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, http://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
+	            <td><img width="144" height="144" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
 	            <td>AMERTA</td>
-	            <td><img class="details-image" src="http://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
+	            <td><img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
 	        </tr>
 	    </table>
 
@@ -79,21 +79,21 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
 		<tr>
 			<td>
 				<ul class="breadcrumb">
-				  <li><a href="http://archaea.sith.itb.ac.id/admin-page/">Admin</a></li>
-				  <li><a href="http://archaea.sith.itb.ac.id/admin-page/event-management/?div=<?php echo $d; ?>">Event Management</a></li>
+				  <li><a href="https://archaea.sith.itb.ac.id/admin-page/">Admin</a></li>
+				  <li><a href="https://archaea.sith.itb.ac.id/admin-page/event-management/?div=<?php echo $d; ?>">Event Management</a></li>
 				  <li>Presensi</li>
 				</ul>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
-					<a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2015&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2015</a>
-					<a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2016&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2016</a>
-					<a href="http://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2017&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2017</a>
+					<a href="https://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2015&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2015</a>
+					<a href="https://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2016&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2016</a>
+					<a href="https://archaea.sith.itb.ac.id/admin-page/event-management/presensi/?angkatan=2017&div=<?php echo $d; ?>&event=<?php echo $a; ?>">2017</a>
 				</div>
 			</td>
 			<td><a href="https://archaea.sith.itb.ac.id/kontak/">Kontak</a></td>
-			<td><a href="http://archaea.sith.itb.ac.id/login-rapot/?err=0">Keluar</a></td>
+			<td><a href="https://archaea.sith.itb.ac.id/login-rapot/?err=0">Keluar</a></td>
 	    </tr>
 
 	</table>
@@ -187,7 +187,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
             }
         };
 
-        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_removePresence.php", true);
+        xhttp.open("POST", "https://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_removePresence.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("nim="+nim+"&acara="+acara+"&div="+divisi);
 	}
@@ -226,7 +226,7 @@ $results = $wpdb->get_results("SELECT presensi.nim, mahasiswa.nama FROM presensi
             }
         };
 
-        xhttp.open("POST", "http://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_addPresence.php", true);
+        xhttp.open("POST", "https://archaea.sith.itb.ac.id/wp-content/themes/zerif-lite/custom/_addPresence.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("event="+acara+"&divisi="+divisi+"&nim="+nim);
 	}
