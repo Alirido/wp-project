@@ -94,7 +94,7 @@ $result = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 		</div>
 		<div class="right">
 
-			<div style="background-color: white">
+			<div style="background-color: #2A1B3A">
 				<canvas id="myChart"></canvas>
 			</div>
 			
@@ -124,27 +124,57 @@ $result = $wpdb->get_results( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 
 var ctx = document.getElementById('myChart').getContext('2d');
 
+Chart.defaults.global.defaultColor = "white";
+
 var myRadarChart = new Chart(ctx, {
     type: 'radar',
     data: {
 	    labels: ['Hiburan & Internalisasi', 'Forum & Kajian', 'Pengembangan Anggota', 'Kebutuhan Dasar', 'Keprofesian', 'Kemasyarakatan'],
 	    datasets: [{
 	    	label: "Kehadiran",
-	    	backgroundColor: 'rgb(100, 99, 132)',
-	    	// 'rgb(255, 99, 132)',
-	    	borderColor: 'rgb(100, 99, 132)',
-	    	data: [5, 8, 4, 7, 5, 6]
+	    	// 'rgb(255, 99, 132)', *warna PINK
+	    	backgroundColor: 'rgba(246, 228, 66, 0.2)',
+	    	borderColor: 'rgba(246, 228, 66, 1)',
+	    	borderWidth: 1,
+	    	data: [5, 2, 4, 6, 5, 6]
 	        // data: [20, 10, 4, 2]
 	    }]
 	},
     options: {
+
+    	scaleLabel: {fontColor: 'rgba(246, 228, 66, 1)'},
     	scale: {
+    		gridLines: {color: "white"},
+    		pointLabels: {fontColor: "white"},
     		ticks: {
-    			//beginAtZero: true,
-    			min: 2,
-    			max: 10
+    			backdropColor: 'rgba(42, 27, 58, 1)',
+    			fontColor: "white",
+    			beginAtZero: true,
+    		// 	// min: 2,
+    			sugestedMax: 10,
+    			stepSize: 1
     		}
-    	}
+    	},
+    	legend: {
+    		position: 'bottom',
+    		labels: {
+                fontColor: 'rgba(246, 228, 66, 1)'
+                // fillStyle: 'rgba(246, 228, 66, 1)'
+            }
+    	},
+    	title: {
+    		display: true,
+    		text: 'Radar Chart Kehadiran',
+    		fontColor: 'rgba(246, 228, 66, 1)' //Yellow
+    	},
+    	layout: {
+            padding: {
+                left: 1,
+                right: 0,
+                top: 0,
+                bottom: 0
+            }
+        }
     }
 });
 
@@ -165,6 +195,43 @@ var myRadarChart = new Chart(ctx, {
 
 //     // Configuration options go here
 //     options: {}
+// });
+
+// var myChart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+//         datasets: [{
+//             label: '# of Votes',
+//             data: [12, 19, 3, 5, 2, 3],
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             borderColor: [
+//                 'rgba(255,99,132,1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero:true
+//                 }
+//             }]
+//         }
+//     }
 // });
 
 	/* When the user clicks on the button, 
