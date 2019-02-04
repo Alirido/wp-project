@@ -12,7 +12,7 @@ if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) {
 
 	$found = $wpdb->get_var("SELECT COUNT(nama) FROM mahasiswa WHERE nim=$nim");
 	if ($found == 1) {
-		if (($wpdb->insert('presensi', 
+		if ($wpdb->insert('presensi', 
 			array(
 				'nim' => $nim,
 				'acara' => $acara,
@@ -21,7 +21,7 @@ if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) {
 			array(
 				'%d',
 				'%s',
-				'%s')))) {
+				'%s'))) {
 			// Berhasil menambahkan
 
 			if ($div=="Hiburan dan Internalisasi") {
@@ -77,7 +77,7 @@ if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) {
 			}
 		} else {
 			// Gagal menambahkan
-			echo 'Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan.';
+			echo 'Mahasiswa dengan nim "'.$nim.$acara.$div.'" gagal ditambahkan.';
 		}
 	} else {
 		echo 'Mahasiswa dengan nim "'.$nim.'" Tidak ada.';
