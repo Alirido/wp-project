@@ -253,6 +253,10 @@ div.presensi {
 	/*height: 63%;*/
 }
 
+#radarchart {
+	height: 100%;
+	width: 100%;
+}
 
 /*--------------- ADMIN SIDE CONTENT ---------------*/
 
