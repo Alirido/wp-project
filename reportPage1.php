@@ -8,6 +8,7 @@ if (isset($_GET['angkatan'])) {
 	$angkatan = $_GET['angkatan'];
 }
 
+global $wpdb;
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +61,26 @@ if (isset($_GET['angkatan'])) {
 		
 		<div class="leader">
 			
-			<div><a href="https://archaea.sith.itb.ac.id/profile/"><i class="fas fa-user"></i></a>
+			<div>
+				<?php
+				// QUERY FOR SELECT THE LEADER OF ARCHAEA GENERATION
+				$row = array(); 
+				if ($angkatan == 2015) {
+					$row = $wpdb->get_row( "SELECT nim, nama, foto FROM mahasiswa WHERE nim=10415011" );
+				} elseif ($angkatan == 2016) {
+					$row = $wpdb->get_row( "SELECT nim, nama, foto FROM mahasiswa WHERE nim=10416001" );
+				} elseif ($angkatan == 2017) {
+					$row = $wpdb->get_row( "SELECT nim, nama, foto FROM mahasiswa WHERE nim=10417033" );
+				}
+				?>
+				<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $row->nim; ?>">
+					<?php 
+						if ($row->foto != "NO") {
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$angkatan.'/'.$row->nim.'.'.$row->foto.'" alt="'.$row->nim.'">';
+						} else {
+							echo '<i class="fas fa-user-circle" style="font-size: 11em"></i>';
+						}
+					?></a>
 			</div>
 
 			<div>
@@ -69,11 +89,11 @@ if (isset($_GET['angkatan'])) {
 				<table>
 					<tr>
 						<td>Nama:</td>
-						<td style="padding-left: 2em">-----------</td>
+						<td style="padding-left: 2em"><?php echo $row->nama; ?></td>
 					</tr>
 					<tr>
 						<td>NIM:</td>
-						<td style="padding-left: 2em">-----------</td>
+						<td style="padding-left: 2em"><?php echo $row->nim; ?></td>
 					</tr>
 				</table>
 
@@ -86,7 +106,6 @@ if (isset($_GET['angkatan'])) {
 		<?php 
 
 		// QUERY
-		global $wpdb;
 		$results = $wpdb->get_results( "SELECT nim, nama, angkatan, foto FROM mahasiswa WHERE angkatan=$angkatan" );
 
 		?>
