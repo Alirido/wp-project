@@ -116,14 +116,14 @@ $print = $wpdb->get_row( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 				$arr[4] = $keprof==0? 0 : round($print->keprof/$keprof*100);
 				$arr[5] = $kemas==0? 0 : round($print->kemas/$kemas*100);
 				?>
-				Presensi <?php echo ($total_acara==0? 0 : round($total/$total_acara*100)); ?>% (<?php echo $total."/".$total_acara; ?>)<br>
+				Presensi: <?php echo ($total_acara==0? 0 : round($total/$total_acara*100)); ?>% (<?php echo $total."/".$total_acara; ?>)<br>
 				<div style="margin-left: 0.4em">
-					- Hiburan & Internalisasi <?php echo $arr[0]; ?>% (<?php echo $print->hib_in."/".$hib_in; ?>)<br>
-					- Forum & kajian <?php echo $arr[1]; ?>% (<?php echo $print->for_kaj."/".$for_kaj; ?>)<br>
-					- Pengembangan Anggota <?php echo $arr[2]; ?>% (<?php echo $print->peng_ang."/".$peng_ang; ?>)<br>
-					- Kebutuhan Dasar <?php echo $arr[3]; ?>% (<?php echo $print->keb_das."/".$keb_das; ?>)<br>
-					- Keprofesian <?php echo $arr[4]; ?>% (<?php echo $print->keprof."/".$keprof; ?>)<br>
-					- Kemasyarakatan <?php echo $arr[5]; ?>% (<?php echo $print->kemas."/".$kemas; ?>)
+					- Hiburan & Internalisasi: <?php echo $arr[0]; ?>% (<?php echo $print->hib_in."/".$hib_in; ?>)<br>
+					- Forum & kajian: <?php echo $arr[1]; ?>% (<?php echo $print->for_kaj."/".$for_kaj; ?>)<br>
+					- Pengembangan Anggota: <?php echo $arr[2]; ?>% (<?php echo $print->peng_ang."/".$peng_ang; ?>)<br>
+					- Kebutuhan Dasar: <?php echo $arr[3]; ?>% (<?php echo $print->keb_das."/".$keb_das; ?>)<br>
+					- Keprofesian: <?php echo $arr[4]; ?>% (<?php echo $print->keprof."/".$keprof; ?>)<br>
+					- Kemasyarakatan: <?php echo $arr[5]; ?>% (<?php echo $print->kemas."/".$kemas; ?>)
 				</div>
 
 			</div>
