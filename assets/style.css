@@ -24,6 +24,7 @@ table.top tr td:nth-child(2) {
 	text-align: center;
 	width:40%;
 	font-size: 6em;
+	color: #F6E442;
 }
 
 table.top tr td:last-child {
@@ -165,8 +166,8 @@ table.topmenu tr td:last-child {
 
 /*--------------- CONTENT ---------------*/
 div.content {
-	position: relative
-	width: 100%;
+	/*position: relative
+	width: 100%;*/
 	margin: 0;
 	padding: 3em 3em;
 	height: 100%;
@@ -195,11 +196,27 @@ table.member td {
 }
 
 /*--- LEADER ---*/
+.leader img {
+	width: 60%;
+	height: 80%;
+}
+
 .leader div {
 	display: inline-block;
 	/*position: relative;*/
 	vertical-align: top;
-	margin: 0 2em;
+	margin: 0 0.5em;
+}
+
+.leader div:first-child {
+	width: 28%;
+	text-align: center;
+	padding-bottom: 0.5em;
+}
+
+.leader div:last-child {
+	width: 60%;
+	text-align: left;
 }
 
 .leader table {
