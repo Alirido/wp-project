@@ -76,7 +76,7 @@ global $wpdb;
 						if ($row->foto != "NO") {
 							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$angkatan.'/'.$row->nim.'.'.$row->foto.'" alt="'.$row->nim.'">';
 						} else {
-							echo '<i class="fas fa-user-circle" style="font-size: 11em"></i>';
+							echo '<i class="fas fa-user-circle"></i>';
 						}
 					?></a>
 			</div>
@@ -104,7 +104,7 @@ global $wpdb;
 		<?php 
 
 		// QUERY
-		$results = $wpdb->get_results( "SELECT nim, nama, angkatan, foto FROM mahasiswa WHERE angkatan=$angkatan" );
+		$results = $wpdb->get_results( "SELECT nim, nama, foto FROM mahasiswa WHERE angkatan=$angkatan" );
 
 		?>
 
@@ -124,7 +124,7 @@ global $wpdb;
 						<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
-							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 						} else {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
@@ -143,7 +143,7 @@ global $wpdb;
 						<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
-							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 						} else {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
@@ -163,7 +163,7 @@ global $wpdb;
 						<a href="https://archaea.sith.itb.ac.id/profile/?nim=<?php echo $print->nim; ?>">
 						<?php 
 						if ($print->foto != "NO") {
-							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
+							echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 						} else {
 							echo '<i class="fas fa-user-circle"></i>';
 						}
