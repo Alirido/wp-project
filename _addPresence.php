@@ -5,13 +5,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  $folder . '/wp-load.php');
 
 global $wpdb;
 
-if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) { // Untuk penambahan mahasiswa
+if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim']) && isset($_POST['angkatan'])) { // Untuk penambahan mahasiswa
 	$acara = $wpdb->escape($_POST['event']);
 	$div = $wpdb->escape($_POST['divisi']);
 	$nim = $wpdb->escape($_POST['nim']);
+	$angkatan = $wpdb->escape($_POST['angkatan']);
 
-	$found = $wpdb->get_var("SELECT COUNT(nama) FROM mahasiswa WHERE nim=$nim");
-	if ($found == 1) {
+	$found1 = $wpdb->get_var("SELECT COUNT(nama) FROM mahasiswa WHERE nim=$nim AND angkatan=$angkatan");
+	$found2 = $wpdb->get_var("SELECT COUNT(id_presensi) FROM presensi WHERE nim=$nim AND acara='$acara'");
+	
+	//debugging
+	// echo $found1." ".$found2;
+
+	if ($found1 == 1 && $found2 == 0) {
 		if ($wpdb->insert('presensi', 
 			array(
 				'nim' => $nim,
@@ -80,7 +86,7 @@ if (isset($_POST['event']) && isset($_POST['divisi']) && isset($_POST['nim'])) {
 			echo 'Mahasiswa dengan nim "'.$nim.$acara.$div.'" gagal ditambahkan.';
 		}
 	} else {
-		echo 'Mahasiswa dengan nim "'.$nim.'" Tidak ada.';
+		echo 'Mahasiswa dengan nim "'.$nim.'" gagal ditambahkan euy.';
 	}
 
 } else {
