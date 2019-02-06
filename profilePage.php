@@ -63,14 +63,14 @@ $print = $wpdb->get_row( "SELECT * FROM mahasiswa WHERE nim=$nim" );
 			<div>
 				<?php 
 				if ($print->foto != "NO") {
-					echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'" width="400" height="400">';
+					echo '<img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/photo-profile/'.$print->angkatan.'/'.$print->nim.'.'.$print->foto.'" alt="'.$print->nim.'">';
 				} else {
 					echo '<i class="fas fa-user-circle" style="float: left; color: white; font-size: 15em"></i>';
 				}
 				?>
-
-				<!-- <i class="fas fa-user" style="float: left; color: white; font-size: 15em"></i> -->
 			</div>
+
+			<br><br>
 
 			<div style="margin-left:0">
 				<table>
