@@ -163,6 +163,13 @@ table.topmenu tr td:last-child {
 	display: block;
 }
 
+.img-rotate {
+	transform:          rotate(270deg);
+	-ms-transform:      rotate(270deg);
+	-moz-transform:     rotate(270deg);
+	-webkit-transform:  rotate(270deg);
+	-o-transform:       rotate(270deg);
+}
 
 /*--------------- CONTENT ---------------*/
 div.content {
@@ -193,7 +200,7 @@ div.content {
 .content i {
 	/*border: 1px solid red;*/
 	color: white;
-	font-size: 10em;
+	font-size: 12em;
 }
 
 table.member td {
@@ -204,14 +211,19 @@ table.member td {
 }
 
 .member img {
-	width: 60%;
-	height: 80%;
+	width: 70%;
+	height: 70%;
+}
+
+.member div i {
+	/*width: 80%;
+	height: 80%;*/
 }
 
 /*--- LEADER ---*/
 .leader img {
-	width: 60%;
-	height: 80%;
+	width: 75%;
+	height: 75%;
 }
 
 .leader div {
@@ -222,7 +234,7 @@ table.member td {
 }
 
 .leader div:first-child {
-	width: 28%;
+	width: 30%;
 	text-align: center;
 	padding-bottom: 0.5em;
 }
@@ -245,16 +257,17 @@ div.left, div.right {
 }
 
 .left div {
-	display: inline-block;
+	/*display: inline-block;*/
 	/*position: relative;*/
 	vertical-align: top;
 	margin: 0.2em;
+	/*border: 1px solid red;*/
 }
 
 div.left {
-	width: 65%;
+	width: 62%;
 	/*background-color: black;*/
-	position: relative;
+	/*position: relative;*/
 	/*font-size: 2em;*/
 	/*border: 1px solid red;*/
 }
@@ -264,9 +277,9 @@ div.left {
 }
 
 div.right {
-	width: 34%;
+	width: 36%;
 	/*background-color: white;*/
-	position: relative;
+	/*position: relative;*/
 	text-align: center;
 	/*border: 1px solid blue;*/
 }
@@ -278,9 +291,9 @@ div.presensi {
 	/*border: 1px solid red;*/
 }
 
-.profil img {
-	/*width: 84%;*/
-	/*height: 63%;*/
+.profil div.left img {
+	width: 50%;
+	height: 50%;
 }
 
 #radarchart {
