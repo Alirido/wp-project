@@ -1,3 +1,4 @@
+<!-- using bootstrap -->
 <div class="container event-mgr">
 
         <h1 style="text-align: center">EVENT MANAGEMENT</h1>

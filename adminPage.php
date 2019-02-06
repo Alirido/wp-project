@@ -45,7 +45,7 @@ $d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyara
 
 	            <td><img width="144" height="144" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png" class="custom-logo" alt="cropped-cropped-FIX-ARCHAEA-3-1-2.png" itemprop="logo" srcset="https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2.png 1004w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-150x150.png 150w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-300x300.png 300w, https://archaea.sith.itb.ac.id/wp-content/uploads/2016/09/cropped-cropped-FIX-ARCHAEA-3-1-2-768x770.png 768w" sizes="(max-width: 1004px) 100vw, 1004px"></td>
 	            <td>AMERTA</td>
-	            <td><img class="details-image" src="https://archaea.sith.itb.ac.id/wp-content/uploads/2018/04/archaeamantap.png" draggable="false" alt="archaea_mantap" width="144" height="144"></td>
+	            <td></td>
 	        </tr>
 	    </table>
 
@@ -55,7 +55,7 @@ $d5 = $wpdb->get_var("SELECT COUNT(*) FROM event_archaea WHERE divisi='Kemasyara
 
 		<tr>
 			<td></td>
-			<td><a href="https://archaea.sith.itb.ac.id/">Home</a></td>
+			<td><a href="https://archaea.sith.itb.ac.id/amerta-home/">Home</a></td>
 			<td class="dropbtn" onclick="myFunction()">Angkatan <i class="fa fa-caret-down"></i>
 				<div class="dropdown-content" id="myDropdown">
 					<a href="https://archaea.sith.itb.ac.id/admin-page?angkatan=2015">2015</a>
